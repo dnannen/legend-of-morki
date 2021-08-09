@@ -1,6 +1,6 @@
 package model;
 
-public interface GameEntityAttributes {
+public interface IGameEntityAttributes {
 
     int getHp();
 
