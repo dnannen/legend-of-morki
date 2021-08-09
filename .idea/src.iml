@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/legende-von-morki/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/legende-von-morki/test" isTestSource="true" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="15" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
