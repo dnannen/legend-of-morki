@@ -10,9 +10,9 @@ public interface IGameEntityAttributes {
 
     void setDmg(int dmg);
 
-    int getSpeed();
+    float getSpeed();
 
-    void setSpeed(int speed);
+    void setSpeed(float speed);
 
     double getAttackspeed();
 
