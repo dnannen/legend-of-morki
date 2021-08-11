@@ -1,9 +1,7 @@
 package logic.defenders.Hero;
 
 import logic.AGameEntity;
-import logic.IGameEntity;
 import logic.skills.ISkill;
-import logic.field.Tile;
 
 /**
  * Created by schlumpy on 05.07.2018.

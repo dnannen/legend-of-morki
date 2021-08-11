@@ -4,7 +4,13 @@ import java.util.HashMap;
 
 public interface IMap {
 
-    public void create(int xLength, int yLength);
+    HashMap<SetOfCoordinates, Tile> create(int xLength, int yLength);
 
-    public HashMap<SetOfCoordinates, Tile> createPath();
+    //TODO these should maybe return the modified HashMap
+
+    Tile getTile(int x, int y);
+
+    void createPath();
+
+    void createScenery();
 }

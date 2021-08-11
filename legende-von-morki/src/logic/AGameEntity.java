@@ -1,7 +1,6 @@
 package logic;
 
 import logic.field.GameField;
-import logic.field.Tile;
 
 public abstract class AGameEntity implements IGameEntity {
 
