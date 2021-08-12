@@ -1,79 +1,85 @@
 package model;
 
-public class AGameEntity implements IActiveGameEntityAbilities, IGameEntityAttributes {
+public abstract class AGameEntity implements IActiveGameEntityAbilities, IGameEntityAttributes {
+
+    private int hp;
+    private int dmg;
+    private float speed;
+    private double attackspeed;
+    private int armour;
+    private int ap;
+    private boolean aoe;
 
     @Override
-    public void die() {
-
-    }
+    public abstract void die();
 
     @Override
     public int getHp() {
-        return 0;
+        return this.hp;
     }
 
     @Override
     public void setHp(int hp) {
-
+        this.hp = hp;
     }
 
     @Override
     public int getDmg() {
-        return 0;
+        return this.dmg;
     }
 
     @Override
     public void setDmg(int dmg) {
-
+        this.dmg = dmg;
     }
 
     @Override
     public float getSpeed() {
-        return 0;
+        return this.speed;
     }
 
     @Override
     public void setSpeed(float speed) {
-
+        this.speed = speed;
     }
 
     @Override
     public double getAttackspeed() {
-        return 0;
+        return this.attackspeed;
     }
 
     @Override
     public void setAttackspeed(double attackspeed) {
-
+        this.attackspeed = attackspeed;
     }
 
     @Override
     public int getArmour() {
-        return 0;
+        return this.armour;
     }
 
     @Override
     public void setArmour(int armor) {
-
+        this.armour = armor;
     }
 
     @Override
     public int getAP() {
-        return 0;
+        return this.ap;
     }
 
     @Override
     public void setAP(int AP) {
-
+        this.ap = AP;
     }
 
     @Override
     public boolean isAoe() {
-        return false;
+        return aoe;
     }
 
     @Override
     public void setAoe(boolean aoe) {
-
+        this.aoe = aoe;
     }
 }

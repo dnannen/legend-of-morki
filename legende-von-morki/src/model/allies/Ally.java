@@ -14,4 +14,8 @@ public class Ally extends AGameEntity {
         this.setAoe(aoe);
     }
 
+    @Override
+    public void die() {
+
+    }
 }

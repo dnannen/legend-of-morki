@@ -19,4 +19,8 @@ public class Enemy extends AGameEntity {
         }
     }
 
+    @Override
+    public void die() {
+
+    }
 }
