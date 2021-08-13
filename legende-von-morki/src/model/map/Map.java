@@ -1,6 +1,7 @@
 package model.map;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 
 public class Map implements IMap {
@@ -59,21 +60,37 @@ public class Map implements IMap {
         this.path.put(start, startTile);
 
         while (currentDepth < this.width) {
-            currentDepth++;
             double strayChance = Math.random() * 100;
 
-            //TODO this only places one path per x-value, so can lead to tiles missing
-            if (strayChance <= 12.5 && currentStray < MAX_STRAY) {
-                currentStray++;
-                currentBreadth++;
-            } else if (strayChance >= 87.5 && currentStray < -MAX_STRAY) {
+            if (strayChance <= 25 && currentStray >= -MAX_STRAY) {
                 currentStray--;
-                currentBreadth--;
-            }
+                currentBreadth = currentBreadth - currentStray;
 
-            this.path.put(new SetOfCoordinates(currentDepth, currentBreadth),
-                          this.getTile(currentDepth, currentBreadth)
-            );
+                this.path.put(new SetOfCoordinates(currentDepth, currentBreadth),
+                              this.getTile(currentDepth, currentBreadth)
+                );
+
+                this.path.put(new SetOfCoordinates(currentDepth + 1, currentBreadth),
+                              this.getTile(currentDepth + 1, currentBreadth)
+                );
+
+            } else if (strayChance >= 75 && MAX_STRAY >= currentStray) {
+                currentStray++;
+                currentBreadth = currentBreadth + currentStray;
+
+                this.path.put(new SetOfCoordinates(currentDepth, currentBreadth),
+                              this.getTile(currentDepth, currentBreadth)
+                );
+
+                this.path.put(new SetOfCoordinates(currentDepth + 1, currentBreadth),
+                              this.getTile(currentDepth + 1, currentBreadth)
+                );
+            } else {
+                currentDepth++;
+                this.path.put(new SetOfCoordinates(currentDepth, currentBreadth),
+                              this.getTile(currentDepth, currentBreadth)
+                );
+            }
         }
 
     }
