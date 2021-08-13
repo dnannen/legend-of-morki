@@ -1,6 +1,7 @@
 package model.map;
 
 import java.util.HashMap;
+import java.util.List;
 
 public interface IMap {
 
@@ -10,7 +11,7 @@ public interface IMap {
 
     //TODO these should maybe return the modified HashMap
 
-    void createPath();
+    List<SetOfCoordinates> createPath();
 
-    void createScenery();
+    List<SetOfCoordinates> createScenery();
 }

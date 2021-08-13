@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="pre merge commit">
+    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="Attempt to finish Map, still does not produce a desirable map, Elements get added more than once. Still not sorted.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/buff/IBuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/buff/IBuff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628780565889</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Attempt to finish Map, still does not produce a desirable map, Elements get added more than once. Still not sorted.">
+      <created>1628886886932</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1628886886932</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +129,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Replaced Logic by Model completely.&#10;Finished up classes like Map and Hero&#10;Added missing classes like Skill and Buildings." />
     <MESSAGE value="Tidied up dev for upcoming pull request." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tidied up dev for upcoming pull request." />
+    <MESSAGE value="Attempt to finish Map, still does not produce a desirable map, Elements get added more than once. Still not sorted." />
+    <option name="LAST_COMMIT_MESSAGE" value="Attempt to finish Map, still does not produce a desirable map, Elements get added more than once. Still not sorted." />
   </component>
 </project>

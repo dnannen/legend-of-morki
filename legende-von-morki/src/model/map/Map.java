@@ -3,12 +3,13 @@ package model.map;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 
 public class Map implements IMap {
 
     private HashMap<SetOfCoordinates, Tile> map;
-    private HashMap<SetOfCoordinates, Tile> path = new HashMap<>();
-    private HashMap<SetOfCoordinates, Tile> scenery = new HashMap<>();
+    private List<SetOfCoordinates> path;
+    private List<SetOfCoordinates> scenery;
     private int length;
     private int width;
 
@@ -37,6 +38,10 @@ public class Map implements IMap {
                 } else { y++; }
             } else { x++; }
         }
+        this.path = createPath();
+        this.scenery = createScenery();
+
+
 
         return map;
     }
@@ -48,63 +53,54 @@ public class Map implements IMap {
     }
 
     @Override
-    public void createPath() {
-        final int MAX_STRAY = 2;
-        int currentStray = 0;
+    public List<SetOfCoordinates> createPath() {
+        final int MAX_STRAY = 3;
         int currentDepth = 1;
         int currentBreadth = 5;
 
-        SetOfCoordinates start = new SetOfCoordinates(currentDepth, currentBreadth);
-        Tile startTile = this.getTile(currentDepth, currentBreadth);
+        int rightStray = 0;
+        int leftStray = 0;
 
-        this.path.put(start, startTile);
+        List<SetOfCoordinates> pathCoordinates = new ArrayList<>();
+        SetOfCoordinates start = new SetOfCoordinates(currentDepth, currentBreadth);
+        pathCoordinates.add(start);
 
         while (currentDepth < this.width) {
             double strayChance = Math.random() * 100;
 
-            if (strayChance <= 25 && currentStray >= -MAX_STRAY) {
-                currentStray--;
-                currentBreadth = currentBreadth - currentStray;
+            if (strayChance <= 25 && rightStray < MAX_STRAY) {
+                rightStray++;
+                currentBreadth++;
 
-                this.path.put(new SetOfCoordinates(currentDepth, currentBreadth),
-                              this.getTile(currentDepth, currentBreadth)
-                );
+                pathCoordinates.add(new SetOfCoordinates(currentDepth, currentBreadth));
+                pathCoordinates.add(new SetOfCoordinates(currentDepth + 1, currentBreadth));
+                currentDepth++;
+            } else if (strayChance >= 75 && leftStray < MAX_STRAY) {
+                leftStray++;
+                currentBreadth--;
 
-                this.path.put(new SetOfCoordinates(currentDepth + 1, currentBreadth),
-                              this.getTile(currentDepth + 1, currentBreadth)
-                );
-
-            } else if (strayChance >= 75 && MAX_STRAY >= currentStray) {
-                currentStray++;
-                currentBreadth = currentBreadth + currentStray;
-
-                this.path.put(new SetOfCoordinates(currentDepth, currentBreadth),
-                              this.getTile(currentDepth, currentBreadth)
-                );
-
-                this.path.put(new SetOfCoordinates(currentDepth + 1, currentBreadth),
-                              this.getTile(currentDepth + 1, currentBreadth)
-                );
+                pathCoordinates.add(new SetOfCoordinates(currentDepth, currentBreadth));
+                pathCoordinates.add(new SetOfCoordinates(currentDepth + 1, currentBreadth));
+                currentDepth++;
             } else {
                 currentDepth++;
-                this.path.put(new SetOfCoordinates(currentDepth, currentBreadth),
-                              this.getTile(currentDepth, currentBreadth)
-                );
+                pathCoordinates.add(new SetOfCoordinates(currentDepth, currentBreadth));
             }
         }
-
+        return pathCoordinates;
     }
 
-    public HashMap<SetOfCoordinates, Tile> getPath() {
+    public List<SetOfCoordinates> getPath() {
         return this.path;
     }
 
     @Override
-    public void createScenery() {
+    public List<SetOfCoordinates> createScenery() {
+        return null;
         //TODO
     }
 
-    public HashMap<SetOfCoordinates, Tile> getScenery() {
+    public List<SetOfCoordinates> getScenery() {
         return this.scenery;
     }
 }
