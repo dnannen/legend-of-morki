@@ -7,12 +7,11 @@ import java.util.ArrayList;
 public class Tile {
 
     private ArrayList<AGameEntity> currentUnitsOnTile;
-    private SetOfCoordinates coordinates;
+    private final SetOfCoordinates COORDINATES;
 
     Tile(int x, int y) {
-        this.coordinates.setX(x);
-        this.coordinates.setY(y);
-        this.currentUnitsOnTile = new ArrayList<AGameEntity>();
+        this.COORDINATES = new SetOfCoordinates(x, y);
+        this.currentUnitsOnTile = new ArrayList<>();
     }
 
     public ArrayList<AGameEntity> getCurrentUnitsOnTile() {
@@ -28,7 +27,7 @@ public class Tile {
     }
 
     public void removeForemostUnit() {
-        this.currentUnitsOnTile.remove(this.currentUnitsOnTile.size());
+        this.currentUnitsOnTile.remove(this.currentUnitsOnTile.size() - 1);
     }
 
     public boolean isEmpty() {
@@ -37,8 +36,7 @@ public class Tile {
 
     public void dealAoeDamage(int dmg) {
         for (AGameEntity currentUnit : this.currentUnitsOnTile) {
-            int damage = dmg;
-            damage = dmg - currentUnit.getArmour();
+            int damage = dmg - currentUnit.getArmour();
             currentUnit.setHp(currentUnit.getHp() - damage);
             //TODO this is better in a handler
             if (currentUnit.getHp() <= 0) {

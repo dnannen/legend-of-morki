@@ -2,25 +2,19 @@ package model.map;
 
 public class SetOfCoordinates {
 
-    private int xCoordinate;
-    private int yCoordinate;
+    private final int X_COORDINATE;
+    private final int Y_COORDINATE;
 
     public SetOfCoordinates(int x, int y) {
-        this.xCoordinate = x;
-        this.yCoordinate = y;
+        this.X_COORDINATE = x;
+        this.Y_COORDINATE = y;
     }
 
     public int getX() {
-        return this.xCoordinate;
-    }
-    public void setX(int x) {
-        this.xCoordinate = x;
+        return this.X_COORDINATE;
     }
 
     public int getY() {
-        return this.yCoordinate;
-    }
-    public void setY(int y) {
-        this.yCoordinate = y;
+        return this.Y_COORDINATE;
     }
 }
