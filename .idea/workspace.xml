@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="Attempt to finish Map, still does not produce a desirable map, Elements get added more than once. Still not sorted.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/buff/IBuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/buff/IBuff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" afterDir="false" />
+    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="Map now able to generate a path for the map, instead of using a HashMap, it's now stored in a List, that is automatically sorted. The Tiles are accessible through the getTile() method.">
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628886886932</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Map now able to generate a path for the map, instead of using a HashMap, it's now stored in a List, that is automatically sorted. The Tiles are accessible through the getTile() method.">
+      <created>1628890227141</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1628890227141</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,6 +134,7 @@
     <MESSAGE value="Replaced Logic by Model completely.&#10;Finished up classes like Map and Hero&#10;Added missing classes like Skill and Buildings." />
     <MESSAGE value="Tidied up dev for upcoming pull request." />
     <MESSAGE value="Attempt to finish Map, still does not produce a desirable map, Elements get added more than once. Still not sorted." />
-    <option name="LAST_COMMIT_MESSAGE" value="Attempt to finish Map, still does not produce a desirable map, Elements get added more than once. Still not sorted." />
+    <MESSAGE value="Map now able to generate a path for the map, instead of using a HashMap, it's now stored in a List, that is automatically sorted. The Tiles are accessible through the getTile() method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Map now able to generate a path for the map, instead of using a HashMap, it's now stored in a List, that is automatically sorted. The Tiles are accessible through the getTile() method." />
   </component>
 </project>

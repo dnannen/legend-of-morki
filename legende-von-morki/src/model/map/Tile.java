@@ -1,6 +1,7 @@
 package model.map;
 
 import model.AGameEntity;
+import model.map.SetOfCoordinates;
 
 import java.util.ArrayList;
 
@@ -8,6 +9,9 @@ public class Tile {
 
     private ArrayList<AGameEntity> currentUnitsOnTile;
     private final SetOfCoordinates COORDINATES;
+
+    private boolean isPath;
+    private boolean isScenery;
 
     Tile(int x, int y) {
         this.COORDINATES = new SetOfCoordinates(x, y);
@@ -43,5 +47,21 @@ public class Tile {
                 currentUnit.die();
             }
         }
+    }
+
+    public boolean isPath() {
+        return this.isPath;
+    }
+
+    public void setPathTile(boolean path) {
+        this.isPath = path;
+    }
+
+    public boolean isScenery() {
+        return this.isScenery;
+    }
+
+    public void setSceneryTile(boolean scenery) {
+        this.isScenery = scenery;
     }
 }

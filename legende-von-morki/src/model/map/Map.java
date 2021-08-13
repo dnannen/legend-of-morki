@@ -1,7 +1,6 @@
 package model.map;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
@@ -38,10 +37,16 @@ public class Map implements IMap {
                 } else { y++; }
             } else { x++; }
         }
+
         this.path = createPath();
+        for (SetOfCoordinates setOfCoordinates : path) {
+            this.getTile(setOfCoordinates.getX(), setOfCoordinates.getY()).setPathTile(true);
+        }
+
         this.scenery = createScenery();
-
-
+        for (SetOfCoordinates setOfCoordinates : scenery) {
+            this.getTile(setOfCoordinates.getX(), setOfCoordinates.getY()).setSceneryTile(true);
+        }
 
         return map;
     }
