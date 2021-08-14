@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="Map now able to generate a path for the map, instead of using a HashMap, it's now stored in a List, that is automatically sorted. The Tiles are accessible through the getTile() method.">
+    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="Implemented method createPath() in Map. See TODO for more information on errors.&#10;&#10;Fixed some minor warnings.">
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/gamefield/Gamefield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +49,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />

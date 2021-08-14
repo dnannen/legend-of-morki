@@ -6,49 +6,47 @@ import java.util.List;
 
 public class Map implements IMap {
 
-    private HashMap<SetOfCoordinates, Tile> map;
+    private HashMap<SetOfCoordinates, Tile> map = new HashMap<>();
     private List<SetOfCoordinates> path;
     private List<SetOfCoordinates> scenery;
-    private int length;
-    private int width;
+    private final int LENGTH;
+    private final int WIDTH;
 
     public Map(int xLength, int yWidth) {
-        this.length = xLength;
-        this.width = yWidth;
-        this.map = create();
+        this.LENGTH = xLength;
+        this.WIDTH = yWidth;
+        this.create();
     }
 
+    //TODO the Map's tiles don't get initialized very well
     @Override
-    public HashMap<SetOfCoordinates, Tile> create() {
+        public void create() {
+        int x = 1;
+        int y = 1;
 
-        int x = 0;
-        int y = 0;
-        HashMap<SetOfCoordinates, Tile> map = new HashMap<>();
-
-        while (map.size() <= length * width) {
+        while (map.size() <= LENGTH * WIDTH) {
             SetOfCoordinates key = new SetOfCoordinates(x, y);
             Tile value = new Tile(x, y);
 
             map.put(key, value);
 
-            if (x == length) {
-                if (y == width) {
+            if (x == LENGTH) {
+                if (y == WIDTH) {
                     break;
                 } else { y++; }
             } else { x++; }
         }
 
         this.path = createPath();
-        for (SetOfCoordinates setOfCoordinates : path) {
+        /*for (SetOfCoordinates setOfCoordinates : path) {
             this.getTile(setOfCoordinates.getX(), setOfCoordinates.getY()).setPathTile(true);
-        }
+        }*/
 
         this.scenery = createScenery();
-        for (SetOfCoordinates setOfCoordinates : scenery) {
+        /*for (SetOfCoordinates setOfCoordinates : scenery) {
             this.getTile(setOfCoordinates.getX(), setOfCoordinates.getY()).setSceneryTile(true);
-        }
+        }*/
 
-        return map;
     }
 
     @Override
@@ -70,7 +68,7 @@ public class Map implements IMap {
         SetOfCoordinates start = new SetOfCoordinates(currentDepth, currentBreadth);
         pathCoordinates.add(start);
 
-        while (currentDepth < this.width) {
+        while (currentDepth < this.WIDTH) {
             double strayChance = Math.random() * 100;
 
             if (strayChance <= 25 && rightStray < MAX_STRAY) {
@@ -99,10 +97,16 @@ public class Map implements IMap {
         return this.path;
     }
 
+    //TODO
     @Override
     public List<SetOfCoordinates> createScenery() {
+        int currentDepth = 1;
+        int currentBreadth = 5;
+
+        //List<SetOfCoordinates> sceneryCoordinates = new ArrayList<>();
+
+        //return sceneryCoordinates;
         return null;
-        //TODO
     }
 
     public List<SetOfCoordinates> getScenery() {
