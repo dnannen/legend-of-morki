@@ -9,13 +9,19 @@ public class Tile {
 
     private ArrayList<AGameEntity> currentUnitsOnTile;
     private final SetOfCoordinates COORDINATES;
+    private final int ID;
 
     private boolean isPath;
     private boolean isScenery;
 
-    Tile(int x, int y) {
+    Tile(int id, int x, int y) {
+        this.ID = id;
         this.COORDINATES = new SetOfCoordinates(x, y);
         this.currentUnitsOnTile = new ArrayList<>();
+    }
+
+    public int getID() {
+        return this.ID;
     }
 
     public ArrayList<AGameEntity> getCurrentUnitsOnTile() {

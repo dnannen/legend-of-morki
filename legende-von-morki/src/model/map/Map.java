@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Map implements IMap {
 
-    private HashMap<SetOfCoordinates, Tile> map = new HashMap<>();
+    private HashMap<SetOfCoordinates, Tile> field = new HashMap<>();
     private List<SetOfCoordinates> path;
     private List<SetOfCoordinates> scenery;
     private final int LENGTH;
@@ -23,12 +23,14 @@ public class Map implements IMap {
         public void create() {
         int x = 1;
         int y = 1;
+        int tileID = 1;
 
-        while (map.size() <= LENGTH * WIDTH) {
+        while (field.size() <= LENGTH * WIDTH) {
             SetOfCoordinates key = new SetOfCoordinates(x, y);
-            Tile value = new Tile(x, y);
+            Tile value = new Tile(tileID, x, y);
+            tileID++;
 
-            map.put(key, value);
+            field.put(key, value);
 
             if (x == LENGTH) {
                 if (y == WIDTH) {
@@ -42,7 +44,7 @@ public class Map implements IMap {
             this.getTile(setOfCoordinates.getX(), setOfCoordinates.getY()).setPathTile(true);
         }*/
 
-        this.scenery = createScenery();
+        this.scenery = markScenery();
         /*for (SetOfCoordinates setOfCoordinates : scenery) {
             this.getTile(setOfCoordinates.getX(), setOfCoordinates.getY()).setSceneryTile(true);
         }*/
@@ -50,9 +52,14 @@ public class Map implements IMap {
     }
 
     @Override
+    public HashMap<SetOfCoordinates, Tile> getField() {
+        return this.field;
+    }
+
+    @Override
     public Tile getTile(int x, int y) {
         SetOfCoordinates coordinates = new SetOfCoordinates(x, y);
-        return this.map.get(coordinates);
+        return this.field.get(coordinates);
     }
 
     @Override
@@ -97,16 +104,27 @@ public class Map implements IMap {
         return this.path;
     }
 
-    //TODO
+    //TODO test if this works
     @Override
-    public List<SetOfCoordinates> createScenery() {
+    public List<SetOfCoordinates> markScenery() {
         int currentDepth = 1;
         int currentBreadth = 5;
 
-        //List<SetOfCoordinates> sceneryCoordinates = new ArrayList<>();
+        List<SetOfCoordinates> sceneryCoordinates = new ArrayList<>();
 
-        //return sceneryCoordinates;
-        return null;
+        currentBreadth -= 2;
+        while (currentBreadth > 1) {
+            sceneryCoordinates.add(new SetOfCoordinates(currentDepth, currentBreadth));
+            currentBreadth--;
+        }
+
+        currentBreadth += 2;
+        while (currentBreadth < 10) {
+            sceneryCoordinates.add(new SetOfCoordinates(currentDepth, currentBreadth));
+            currentBreadth++;
+        }
+
+        return sceneryCoordinates;
     }
 
     public List<SetOfCoordinates> getScenery() {

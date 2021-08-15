@@ -9,7 +9,11 @@ public interface IMap {
 
     Tile getTile(int x, int y);
 
+    HashMap<SetOfCoordinates, Tile> getField();
+
+    //Tile getTileFromID(int id);
+
     List<SetOfCoordinates> createPath();
 
-    List<SetOfCoordinates> createScenery();
+    List<SetOfCoordinates> markScenery();
 }
