@@ -35,18 +35,13 @@ public class Map implements IMap {
                 x++;
                 if (x > LENGTH) break;
             }
-
-            this.path = createPath();
-        /*for (SetOfCoordinates setOfCoordinates : path) {
-            this.getTile(setOfCoordinates.getX(), setOfCoordinates.getY()).setPathTile(true);
-        }*/
-
-            this.scenery = markScenery();
-        /*for (SetOfCoordinates setOfCoordinates : scenery) {
-            this.getTile(setOfCoordinates.getX(), setOfCoordinates.getY()).setSceneryTile(true);
-        }*/
-
         }
+        this.path = createPath();
+        //TODO mark tiles as path
+
+        this.scenery = markScenery();
+        //TODO mark tiles as scenery
+
     }
 
     @Override
@@ -56,7 +51,7 @@ public class Map implements IMap {
 
     @Override
     public Tile getTile(int x, int y) {
-        return this.tiles.get((x * 10) + y);
+        return this.tiles.get((x * 10 + y) - 10);
     }
 
     @Override
@@ -72,6 +67,8 @@ public class Map implements IMap {
 
         int rightStray = 0;
         int leftStray = 0;
+
+        //TODO it seems its better to store the path as tiles
 
         List<SetOfCoordinates> pathCoordinates = new ArrayList<>();
         SetOfCoordinates start = new SetOfCoordinates(currentDepth, currentBreadth);

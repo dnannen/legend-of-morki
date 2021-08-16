@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="Implemented method createPath() in Map. See TODO for more information on errors.&#10;&#10;Fixed some minor warnings.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_08_2021_15_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_08_2021_15_22__Changes_.xml" afterDir="false" />
+    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="Changed and optimized the way the map gets stored and created. Map now gets created without mistakes.&#10;&#10;Tests and tweaks following for scenery-generation.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/SetOfCoordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/SetOfCoordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628890227141</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changed and optimized the way the map gets stored and created. Map now gets created without mistakes.&#10;&#10;Tests and tweaks following for scenery-generation.">
+      <created>1629117276620</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1629117276620</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +144,7 @@
     <MESSAGE value="Tidied up dev for upcoming pull request." />
     <MESSAGE value="Attempt to finish Map, still does not produce a desirable map, Elements get added more than once. Still not sorted." />
     <MESSAGE value="Map now able to generate a path for the map, instead of using a HashMap, it's now stored in a List, that is automatically sorted. The Tiles are accessible through the getTile() method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Map now able to generate a path for the map, instead of using a HashMap, it's now stored in a List, that is automatically sorted. The Tiles are accessible through the getTile() method." />
+    <MESSAGE value="Changed and optimized the way the map gets stored and created. Map now gets created without mistakes.&#10;&#10;Tests and tweaks following for scenery-generation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed and optimized the way the map gets stored and created. Map now gets created without mistakes.&#10;&#10;Tests and tweaks following for scenery-generation." />
   </component>
 </project>
