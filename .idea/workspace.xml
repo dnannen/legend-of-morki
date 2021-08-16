@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="Changed and optimized the way the map gets stored and created. Map now gets created without mistakes.&#10;&#10;Tests and tweaks following for scenery-generation.">
+    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="Minor tweaks, committed before some greater changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629117276620</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Minor tweaks, committed before some greater changes">
+      <created>1629123222538</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1629123222538</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +153,7 @@
     <MESSAGE value="Attempt to finish Map, still does not produce a desirable map, Elements get added more than once. Still not sorted." />
     <MESSAGE value="Map now able to generate a path for the map, instead of using a HashMap, it's now stored in a List, that is automatically sorted. The Tiles are accessible through the getTile() method." />
     <MESSAGE value="Changed and optimized the way the map gets stored and created. Map now gets created without mistakes.&#10;&#10;Tests and tweaks following for scenery-generation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed and optimized the way the map gets stored and created. Map now gets created without mistakes.&#10;&#10;Tests and tweaks following for scenery-generation." />
+    <MESSAGE value="Minor tweaks, committed before some greater changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor tweaks, committed before some greater changes" />
   </component>
 </project>

@@ -12,7 +12,7 @@ public interface IMap {
 
     Tile getTileFromID(int id);
 
-    List<SetOfCoordinates> createPath();
+    List<Tile> createPath();
 
-    List<SetOfCoordinates> markScenery();
+    List<Tile> markScenery();
 }

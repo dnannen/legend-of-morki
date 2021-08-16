@@ -10,8 +10,8 @@ public class Map implements IMap {
     private final int LENGTH;
     private final int WIDTH;
 
-    private List<SetOfCoordinates> path;
-    private List<SetOfCoordinates> scenery;
+    private List<Tile> path;
+    private List<Tile> scenery;
 
     public Map(int xLength, int yWidth) {
         this.LENGTH = xLength;
@@ -37,10 +37,14 @@ public class Map implements IMap {
             }
         }
         this.path = createPath();
-        //TODO mark tiles as path
+        for (Tile tile : path) {
+            tile.setPathTile(true);
+        }
 
         this.scenery = markScenery();
-        //TODO mark tiles as scenery
+        for (Tile tile : scenery) {
+            tile.setSceneryTile(true);
+        }
 
     }
 
@@ -60,7 +64,7 @@ public class Map implements IMap {
     }
 
     @Override
-    public List<SetOfCoordinates> createPath() {
+    public List<Tile> createPath() {
         final int MAX_STRAY = 3;
         int currentDepth = 1;
         int currentBreadth = 5;
@@ -68,11 +72,8 @@ public class Map implements IMap {
         int rightStray = 0;
         int leftStray = 0;
 
-        //TODO it seems its better to store the path as tiles
-
-        List<SetOfCoordinates> pathCoordinates = new ArrayList<>();
-        SetOfCoordinates start = new SetOfCoordinates(currentDepth, currentBreadth);
-        pathCoordinates.add(start);
+        List<Tile> pathTiles = new ArrayList<>();
+        pathTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
 
         while (currentDepth < this.WIDTH) {
             double strayChance = Math.random() * 100;
@@ -81,38 +82,39 @@ public class Map implements IMap {
                 rightStray++;
                 currentBreadth++;
 
-                pathCoordinates.add(new SetOfCoordinates(currentDepth, currentBreadth));
-                pathCoordinates.add(new SetOfCoordinates(currentDepth + 1, currentBreadth));
+                pathTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
+                pathTiles.add(new Tile((currentDepth + 1) * 10 + currentBreadth - 10, currentDepth + 1, currentBreadth));
                 currentDepth++;
             } else if (strayChance >= 75 && leftStray < MAX_STRAY) {
                 leftStray++;
                 currentBreadth--;
 
-                pathCoordinates.add(new SetOfCoordinates(currentDepth, currentBreadth));
-                pathCoordinates.add(new SetOfCoordinates(currentDepth + 1, currentBreadth));
+                pathTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
+                pathTiles.add(new Tile((currentDepth + 1) * 10 + currentBreadth - 10, currentDepth + 1, currentBreadth));
                 currentDepth++;
             } else {
                 currentDepth++;
-                pathCoordinates.add(new SetOfCoordinates(currentDepth, currentBreadth));
+                pathTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
             }
         }
-        return pathCoordinates;
+        return pathTiles;
+
     }
 
-    public List<SetOfCoordinates> getPath() {
+    public List<Tile> getPath() {
         return this.path;
     }
 
     //TODO test if this works
     @Override
-    public List<SetOfCoordinates> markScenery() {
+    public List<Tile> markScenery() {
         int currentDepth = 1;
         int currentBreadth = 5;
 
-        List<SetOfCoordinates> sceneryCoordinates = new ArrayList<>();
+        List<Tile> sceneryCoordinates = new ArrayList<>();
 
         currentBreadth -= 2;
-        while (currentBreadth > 1) {
+        /*while (currentBreadth > 1) {
             sceneryCoordinates.add(new SetOfCoordinates(currentDepth, currentBreadth));
             currentBreadth--;
         }
@@ -121,12 +123,12 @@ public class Map implements IMap {
         while (currentBreadth < 10) {
             sceneryCoordinates.add(new SetOfCoordinates(currentDepth, currentBreadth));
             currentBreadth++;
-        }
+        }*/
 
         return sceneryCoordinates;
     }
 
-    public List<SetOfCoordinates> getScenery() {
+    public List<Tile> getScenery() {
         return this.scenery;
     }
 
