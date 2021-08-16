@@ -1,12 +1,13 @@
 import model.map.Map;
-import model.map.SetOfCoordinates;
-
-import java.util.HashMap;
-import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        Map map = new Map(10, 10);
+        for (int i = 0; i < map.size(); i++) {
+            System.out.println(map.getTileFromID(i).getCoordinates().show());
+        }
 
         /*
         List<SetOfCoordinates> path = map.getPath();

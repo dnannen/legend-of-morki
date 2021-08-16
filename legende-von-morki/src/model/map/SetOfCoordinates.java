@@ -10,6 +10,10 @@ public class SetOfCoordinates {
         this.Y_COORDINATE = y;
     }
 
+    public String show() {
+        return X_COORDINATE + ", " + Y_COORDINATE;
+    }
+
     public int getX() {
         return this.X_COORDINATE;
     }

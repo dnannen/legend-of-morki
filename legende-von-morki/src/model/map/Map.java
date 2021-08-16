@@ -1,16 +1,17 @@
 package model.map;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Map implements IMap {
 
-    private HashMap<SetOfCoordinates, Tile> field = new HashMap<>();
-    private List<SetOfCoordinates> path;
-    private List<SetOfCoordinates> scenery;
+    private List<Tile> tiles = new ArrayList<>();
+
     private final int LENGTH;
     private final int WIDTH;
+
+    private List<SetOfCoordinates> path;
+    private List<SetOfCoordinates> scenery;
 
     public Map(int xLength, int yWidth) {
         this.LENGTH = xLength;
@@ -18,48 +19,49 @@ public class Map implements IMap {
         this.create();
     }
 
-    //TODO the Map's tiles don't get initialized very well
     @Override
         public void create() {
         int x = 1;
         int y = 1;
         int tileID = 1;
 
-        while (field.size() <= LENGTH * WIDTH) {
-            SetOfCoordinates key = new SetOfCoordinates(x, y);
-            Tile value = new Tile(tileID, x, y);
+        while (true) {
+            this.tiles.add(new Tile(tileID, x, y));
             tileID++;
 
-            field.put(key, value);
+            y++;
+            if (y > WIDTH) {
+                y = 1;
+                x++;
+                if (x > LENGTH) break;
+            }
 
-            if (x == LENGTH) {
-                if (y == WIDTH) {
-                    break;
-                } else { y++; }
-            } else { x++; }
-        }
-
-        this.path = createPath();
+            this.path = createPath();
         /*for (SetOfCoordinates setOfCoordinates : path) {
             this.getTile(setOfCoordinates.getX(), setOfCoordinates.getY()).setPathTile(true);
         }*/
 
-        this.scenery = markScenery();
+            this.scenery = markScenery();
         /*for (SetOfCoordinates setOfCoordinates : scenery) {
             this.getTile(setOfCoordinates.getX(), setOfCoordinates.getY()).setSceneryTile(true);
         }*/
 
+        }
     }
 
     @Override
-    public HashMap<SetOfCoordinates, Tile> getField() {
-        return this.field;
+    public int size() {
+        return this.tiles.size();
     }
 
     @Override
     public Tile getTile(int x, int y) {
-        SetOfCoordinates coordinates = new SetOfCoordinates(x, y);
-        return this.field.get(coordinates);
+        return this.tiles.get((x * 10) + y);
+    }
+
+    @Override
+    public Tile getTileFromID(int id) {
+        return this.tiles.get(id);
     }
 
     @Override
@@ -130,4 +132,5 @@ public class Map implements IMap {
     public List<SetOfCoordinates> getScenery() {
         return this.scenery;
     }
+
 }

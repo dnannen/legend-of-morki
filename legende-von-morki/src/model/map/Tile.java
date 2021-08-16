@@ -24,6 +24,10 @@ public class Tile {
         return this.ID;
     }
 
+    public SetOfCoordinates getCoordinates() {
+        return this.COORDINATES;
+    }
+
     public ArrayList<AGameEntity> getCurrentUnitsOnTile() {
         return this.currentUnitsOnTile;
     }
