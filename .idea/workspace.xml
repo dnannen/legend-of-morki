@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="Starting to work on units. deleted the parameters of the allied units">
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Engineer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Berserk.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Berserk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Paladin.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Paladin.java" afterDir="false" />
+    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="pulled dev.&#10;created engineer and started on rage.&#10;need tower functions and attack functions for it to work">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +52,7 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -148,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629128222201</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="pulled dev.&#10;created engineer and started on rage.&#10;need tower functions and attack functions for it to work">
+      <created>1629132757287</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1629132757287</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,6 +177,7 @@
     <MESSAGE value="Minor tweaks, committed before some greater changes" />
     <MESSAGE value="Path now generates as Tile-List. Marking scenery works now." />
     <MESSAGE value="SetOfCoordinates was replaced, all info is now directly in the Tiles. Tests for map- and path-generation all produce good results." />
-    <option name="LAST_COMMIT_MESSAGE" value="SetOfCoordinates was replaced, all info is now directly in the Tiles. Tests for map- and path-generation all produce good results." />
+    <MESSAGE value="pulled dev.&#10;created engineer and started on rage.&#10;need tower functions and attack functions for it to work" />
+    <option name="LAST_COMMIT_MESSAGE" value="pulled dev.&#10;created engineer and started on rage.&#10;need tower functions and attack functions for it to work" />
   </component>
 </project>
