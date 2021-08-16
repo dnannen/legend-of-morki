@@ -7,14 +7,14 @@ public class Map implements IMap {
 
     private List<Tile> tiles = new ArrayList<>();
 
-    private final int LENGTH;
+    private final int DEPTH;
     private final int WIDTH;
 
     private List<Tile> path;
     private List<Tile> scenery;
 
     public Map(int xLength, int yWidth) {
-        this.LENGTH = xLength;
+        this.DEPTH = xLength;
         this.WIDTH = yWidth;
         this.create();
     }
@@ -33,7 +33,7 @@ public class Map implements IMap {
             if (y > WIDTH) {
                 y = 1;
                 x++;
-                if (x > LENGTH) break;
+                if (x > DEPTH) break;
             }
         }
         this.path = createPath();
@@ -109,20 +109,27 @@ public class Map implements IMap {
     @Override
     public List<Tile> markScenery() {
         int currentDepth = 1;
-        int currentBreadth = 5;
+        int currentBreadth;
 
         List<Tile> sceneryTiles = new ArrayList<>();
 
-        currentBreadth -= 2;
-        while (currentBreadth > 1) {
-            sceneryTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
-            currentBreadth--;
-        }
+        for (Tile tile : path) {
+            while (currentDepth <= this.DEPTH) {
 
-        currentBreadth += 2;
-        while (currentBreadth < 10) {
-            sceneryTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
-            currentBreadth++;
+                currentBreadth = tile.getCoordinates().get(1) - 3;
+                while (currentBreadth >= 1) {
+                    sceneryTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
+                     currentBreadth--;
+                }
+
+                currentBreadth = tile.getCoordinates().get(1) + 3;
+                while (currentBreadth <= 10) {
+                    sceneryTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
+                    currentBreadth++;
+                }
+                currentDepth++;
+
+            }
         }
 
         return sceneryTiles;

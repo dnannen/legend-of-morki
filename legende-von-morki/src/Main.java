@@ -20,8 +20,9 @@ public class Main {
             System.out.println(tile.isPath());
         }*/
 
-        for (Tile tile : scenery) {
+        /*for (Tile tile : scenery) {
             System.out.println(tile.getCoordinates());
-        }
+            System.out.println(tile.isScenery());
+        }*/
     }
 }
