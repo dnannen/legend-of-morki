@@ -15,6 +15,10 @@ public class Berserk extends Ally {
      * but amplified by 250% and has a higher attackspeed of 200%.
      */
     public void rage() {
+        //TODO turret position has a enemy one tile around it
         setSpeed(1);
+        //TODO deal 3 damage per hit
+        setDmg((int) (this.getDmg() * 2.5));
+        setAttackspeed(this.getAttackspeed() * 2);
     }
 }

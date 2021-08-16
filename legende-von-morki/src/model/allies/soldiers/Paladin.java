@@ -3,6 +3,7 @@ package model.allies.soldiers;
 import model.allies.Ally;
 
 public class Paladin extends Ally {
+
     private int maxHp = 30;
     //70, 25, 3, 0.3, 30, 5, false
     public Paladin() {
@@ -22,6 +23,7 @@ public class Paladin extends Ally {
             this.setDmg(this.getDmg() * 2);
         } else {
             this.setHp(0);
+            //TODO delete instead of set 0?
         }
     }
 }
