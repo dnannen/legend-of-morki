@@ -3,16 +3,31 @@ package model.map;
 import model.AGameEntity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Tile {
 
-    private ArrayList<AGameEntity> currentUnitsOnTile;
-    private SetOfCoordinates coordinates;
+    private final int ID;
+    private final List<Integer> COORDINATES = new ArrayList<>();
 
-    Tile(int x, int y) {
-        this.coordinates.setX(x);
-        this.coordinates.setY(y);
-        this.currentUnitsOnTile = new ArrayList<AGameEntity>();
+    private ArrayList<AGameEntity> currentUnitsOnTile;
+
+    private boolean isPath;
+    private boolean isScenery;
+
+    Tile(int id, int x, int y) {
+        this.ID = id;
+        this.COORDINATES.add(x);
+        this.COORDINATES.add(y);
+        this.currentUnitsOnTile = new ArrayList<>();
+    }
+
+    public int getID() {
+        return this.ID;
+    }
+
+    public List<Integer> getCoordinates() {
+        return this.COORDINATES;
     }
 
     public ArrayList<AGameEntity> getCurrentUnitsOnTile() {
@@ -28,7 +43,7 @@ public class Tile {
     }
 
     public void removeForemostUnit() {
-        this.currentUnitsOnTile.remove(this.currentUnitsOnTile.size());
+        this.currentUnitsOnTile.remove(this.currentUnitsOnTile.size() - 1);
     }
 
     public boolean isEmpty() {
@@ -37,13 +52,28 @@ public class Tile {
 
     public void dealAoeDamage(int dmg) {
         for (AGameEntity currentUnit : this.currentUnitsOnTile) {
-            int damage = dmg;
-            damage = dmg - currentUnit.getArmour();
+            int damage = dmg - currentUnit.getArmour();
             currentUnit.setHp(currentUnit.getHp() - damage);
             //TODO this is better in a handler
             if (currentUnit.getHp() <= 0) {
                 currentUnit.die();
             }
         }
+    }
+
+    public boolean isPath() {
+        return this.isPath;
+    }
+
+    public void setPathTile(boolean path) {
+        this.isPath = path;
+    }
+
+    public boolean isScenery() {
+        return this.isScenery;
+    }
+
+    public void setSceneryTile(boolean scenery) {
+        this.isScenery = scenery;
     }
 }
