@@ -1,22 +1,24 @@
 package model.map;
 
 import model.AGameEntity;
-import model.map.SetOfCoordinates;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Tile {
 
-    private ArrayList<AGameEntity> currentUnitsOnTile;
-    private final SetOfCoordinates COORDINATES;
     private final int ID;
+    private final List<Integer> COORDINATES = new ArrayList<>();
+
+    private ArrayList<AGameEntity> currentUnitsOnTile;
 
     private boolean isPath;
     private boolean isScenery;
 
     Tile(int id, int x, int y) {
         this.ID = id;
-        this.COORDINATES = new SetOfCoordinates(x, y);
+        this.COORDINATES.add(x);
+        this.COORDINATES.add(y);
         this.currentUnitsOnTile = new ArrayList<>();
     }
 
@@ -24,7 +26,7 @@ public class Tile {
         return this.ID;
     }
 
-    public SetOfCoordinates getCoordinates() {
+    public List<Integer> getCoordinates() {
         return this.COORDINATES;
     }
 

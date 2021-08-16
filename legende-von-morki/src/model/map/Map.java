@@ -105,27 +105,27 @@ public class Map implements IMap {
         return this.path;
     }
 
-    //TODO test if this works
+    //TODO fix
     @Override
     public List<Tile> markScenery() {
         int currentDepth = 1;
         int currentBreadth = 5;
 
-        List<Tile> sceneryCoordinates = new ArrayList<>();
+        List<Tile> sceneryTiles = new ArrayList<>();
 
         currentBreadth -= 2;
-        /*while (currentBreadth > 1) {
-            sceneryCoordinates.add(new SetOfCoordinates(currentDepth, currentBreadth));
+        while (currentBreadth > 1) {
+            sceneryTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
             currentBreadth--;
         }
 
         currentBreadth += 2;
         while (currentBreadth < 10) {
-            sceneryCoordinates.add(new SetOfCoordinates(currentDepth, currentBreadth));
+            sceneryTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
             currentBreadth++;
-        }*/
+        }
 
-        return sceneryCoordinates;
+        return sceneryTiles;
     }
 
     public List<Tile> getScenery() {
