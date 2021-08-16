@@ -4,7 +4,6 @@ import model.allies.Ally;
 
 public class Berserk extends Ally {
 
-    //100, 30, 0, 1, 25, 0, false
     public Berserk() {
         super(100, 30, 0, 1, 25, 0, false);
     }

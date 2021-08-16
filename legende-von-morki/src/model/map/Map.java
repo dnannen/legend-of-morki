@@ -10,6 +10,9 @@ public class Map implements IMap {
     private final int DEPTH;
     private final int WIDTH;
 
+    //TODO create a new path, that is the reverse of this one for the enemies/allies
+    //private List<Tile> enemiesPath;
+    //private List<Tile> alliesPath;
     private List<Tile> path;
     private List<Tile> scenery;
 
