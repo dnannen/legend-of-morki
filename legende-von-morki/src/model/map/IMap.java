@@ -1,16 +1,18 @@
 package model.map;
 
-import java.util.HashMap;
+import java.util.List;
 
 public interface IMap {
 
-    HashMap<SetOfCoordinates, Tile> create();
+    void create();
+
+    int size();
 
     Tile getTile(int x, int y);
 
-    //TODO these should maybe return the modified HashMap
+    Tile getTileFromID(int id);
 
-    void createPath();
+    List<Tile> createPath();
 
-    void createScenery();
+    List<Tile> markScenery();
 }

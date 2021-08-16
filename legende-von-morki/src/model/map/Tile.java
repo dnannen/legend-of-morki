@@ -3,15 +3,31 @@ package model.map;
 import model.AGameEntity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Tile {
 
-    private ArrayList<AGameEntity> currentUnitsOnTile;
-    private final SetOfCoordinates COORDINATES;
+    private final int ID;
+    private final List<Integer> COORDINATES = new ArrayList<>();
 
-    Tile(int x, int y) {
-        this.COORDINATES = new SetOfCoordinates(x, y);
+    private ArrayList<AGameEntity> currentUnitsOnTile;
+
+    private boolean isPath;
+    private boolean isScenery;
+
+    Tile(int id, int x, int y) {
+        this.ID = id;
+        this.COORDINATES.add(x);
+        this.COORDINATES.add(y);
         this.currentUnitsOnTile = new ArrayList<>();
+    }
+
+    public int getID() {
+        return this.ID;
+    }
+
+    public List<Integer> getCoordinates() {
+        return this.COORDINATES;
     }
 
     public ArrayList<AGameEntity> getCurrentUnitsOnTile() {
@@ -43,5 +59,21 @@ public class Tile {
                 currentUnit.die();
             }
         }
+    }
+
+    public boolean isPath() {
+        return this.isPath;
+    }
+
+    public void setPathTile(boolean path) {
+        this.isPath = path;
+    }
+
+    public boolean isScenery() {
+        return this.isScenery;
+    }
+
+    public void setSceneryTile(boolean scenery) {
+        this.isScenery = scenery;
     }
 }

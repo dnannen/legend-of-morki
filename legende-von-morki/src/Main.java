@@ -1,24 +1,28 @@
 import model.map.Map;
-import model.map.SetOfCoordinates;
 import model.map.Tile;
 
-import java.util.HashMap;
-import java.util.Set;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
         Map map = new Map(10, 10);
-        map.create();
-        map.createPath();
-        HashMap<SetOfCoordinates, Tile> test = map.getPath();
 
-        Set<SetOfCoordinates> keys = test.keySet();
+        List<Tile> path = map.getPath();
+        List<Tile> scenery = map.getScenery();
 
-        for (SetOfCoordinates f : keys) {
-            System.out.println(f.getX() + ", " + f.getY());
-        }
+        /*for (int i = 0; i < map.size(); i++) {
+            System.out.println(map.getTileFromID(i).getCoordinates());
+        }*/
+
+        /*for (Tile tile : path) {
+            System.out.println(tile.getCoordinates());
+            System.out.println(tile.isPath());
+        }*/
+
+        /*for (Tile tile : scenery) {
+            System.out.println(tile.getCoordinates());
+            System.out.println(tile.isScenery());
+        }*/
     }
-
-
 }

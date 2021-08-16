@@ -1,93 +1,142 @@
 package model.map;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
 
 public class Map implements IMap {
 
-    private HashMap<SetOfCoordinates, Tile> map;
-    private HashMap<SetOfCoordinates, Tile> path = new HashMap<>();
-    private HashMap<SetOfCoordinates, Tile> scenery = new HashMap<>();
-    private int length;
-    private int width;
+    private List<Tile> tiles = new ArrayList<>();
+
+    private final int DEPTH;
+    private final int WIDTH;
+
+    private List<Tile> path;
+    private List<Tile> scenery;
 
     public Map(int xLength, int yWidth) {
-        this.length = xLength;
-        this.width = yWidth;
-        this.map = create();
+        this.DEPTH = xLength;
+        this.WIDTH = yWidth;
+        this.create();
     }
 
     @Override
-    public HashMap<SetOfCoordinates, Tile> create() {
+        public void create() {
+        int x = 1;
+        int y = 1;
+        int tileID = 1;
 
-        int x = 0;
-        int y = 0;
-        HashMap<SetOfCoordinates, Tile> map = new HashMap<>();
+        while (true) {
+            this.tiles.add(new Tile(tileID, x, y));
+            tileID++;
 
-        while (map.size() <= length * width) {
-            SetOfCoordinates key = new SetOfCoordinates(x, y);
-            Tile value = new Tile(x, y);
-
-            map.put(key, value);
-
-            if (x == length) {
-                if (y == width) {
-                    break;
-                } else { y++; }
-            } else { x++; }
+            y++;
+            if (y > WIDTH) {
+                y = 1;
+                x++;
+                if (x > DEPTH) break;
+            }
+        }
+        this.path = createPath();
+        for (Tile tile : path) {
+            tile.setPathTile(true);
         }
 
-        return map;
+        this.scenery = markScenery();
+        for (Tile tile : scenery) {
+            tile.setSceneryTile(true);
+        }
+
+    }
+
+    @Override
+    public int size() {
+        return this.tiles.size();
     }
 
     @Override
     public Tile getTile(int x, int y) {
-        SetOfCoordinates coordinates = new SetOfCoordinates(x, y);
-        return this.map.get(coordinates);
+        return this.tiles.get((x * 10 + y) - 10);
     }
 
     @Override
-    public void createPath() {
-        final int MAX_STRAY = 2;
-        int currentStray = 0;
+    public Tile getTileFromID(int id) {
+        return this.tiles.get(id);
+    }
+
+    @Override
+    public List<Tile> createPath() {
+        final int MAX_STRAY = 3;
         int currentDepth = 1;
         int currentBreadth = 5;
 
-        SetOfCoordinates start = new SetOfCoordinates(currentDepth, currentBreadth);
-        Tile startTile = this.getTile(currentDepth, currentBreadth);
+        int rightStray = 0;
+        int leftStray = 0;
 
-        this.path.put(start, startTile);
+        List<Tile> pathTiles = new ArrayList<>();
+        pathTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
 
-        while (currentDepth < this.width) {
-            currentDepth++;
+        while (currentDepth < this.WIDTH) {
             double strayChance = Math.random() * 100;
 
-            //TODO this only places one path per x-value, so can lead to tiles missing
-            if (strayChance <= 12.5 && currentStray < MAX_STRAY) {
-                currentStray++;
+            if (strayChance <= 25 && rightStray < MAX_STRAY) {
+                rightStray++;
                 currentBreadth++;
-            } else if (strayChance >= 87.5 && currentStray < -MAX_STRAY) {
-                currentStray--;
-                currentBreadth--;
-            }
 
-            this.path.put(new SetOfCoordinates(currentDepth, currentBreadth),
-                          this.getTile(currentDepth, currentBreadth)
-            );
+                pathTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
+                pathTiles.add(new Tile((currentDepth + 1) * 10 + currentBreadth - 10, currentDepth + 1, currentBreadth));
+                currentDepth++;
+            } else if (strayChance >= 75 && leftStray < MAX_STRAY) {
+                leftStray++;
+                currentBreadth--;
+
+                pathTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
+                pathTiles.add(new Tile((currentDepth + 1) * 10 + currentBreadth - 10, currentDepth + 1, currentBreadth));
+                currentDepth++;
+            } else {
+                currentDepth++;
+                pathTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
+            }
         }
+        return pathTiles;
 
     }
 
-    public HashMap<SetOfCoordinates, Tile> getPath() {
+    public List<Tile> getPath() {
         return this.path;
     }
 
+    //TODO fix
     @Override
-    public void createScenery() {
-        //TODO
+    public List<Tile> markScenery() {
+        int currentDepth = 1;
+        int currentBreadth;
+
+        List<Tile> sceneryTiles = new ArrayList<>();
+
+        for (Tile tile : path) {
+            while (currentDepth <= this.DEPTH) {
+
+                currentBreadth = tile.getCoordinates().get(1) - 3;
+                while (currentBreadth >= 1) {
+                    sceneryTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
+                     currentBreadth--;
+                }
+
+                currentBreadth = tile.getCoordinates().get(1) + 3;
+                while (currentBreadth <= 10) {
+                    sceneryTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
+                    currentBreadth++;
+                }
+                currentDepth++;
+
+            }
+        }
+
+        return sceneryTiles;
     }
 
-    public HashMap<SetOfCoordinates, Tile> getScenery() {
+    public List<Tile> getScenery() {
         return this.scenery;
     }
+
 }
