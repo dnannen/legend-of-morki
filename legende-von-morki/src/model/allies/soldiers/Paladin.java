@@ -1,19 +1,16 @@
 package model.allies.soldiers;
 
-import model.allies.Ally;
+import model.allies.AAlly;
+import model.map.Tile;
 
-public class Paladin extends Ally {
+public class Paladin extends AAlly {
 
     private final int MAX_HP = 30;
 
-    public Paladin() {
-        super(70, 25, 3, 0.3, 30, 5, false);
+    public Paladin(Tile tile) {
+        super(70, 25, 3, 0.3, 30, 5, false, tile);
     }
 
-    /**
-     * Passive Ability: Faith
-     * Has a 30% chance to be revived on spot with 50% max. HP and 200% damage
-     */
     @Override
     public void die() {
         int random = (int) (Math.random() * 10);

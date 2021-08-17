@@ -1,10 +1,11 @@
 package model.allies.soldiers;
 
-import model.allies.Ally;
+import model.allies.AAlly;
+import model.map.Tile;
 
-public class Engineer extends Ally {
+public class Engineer extends AAlly {
 
-    public Engineer() {
-        super(15, 5, 0, 1.25, 10, 2, false);
+    public Engineer(Tile tile) {
+        super(15, 5, 0, 1.25, 10, 2, false, tile);
     }
 }

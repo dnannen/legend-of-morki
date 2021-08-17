@@ -1,6 +1,6 @@
 package model.affiliation;
 
-public enum Guild {
+public enum Affiliation {
     JW,
     KINGDOM
 }

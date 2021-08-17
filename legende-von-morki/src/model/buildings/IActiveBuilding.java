@@ -1,5 +1,7 @@
 package model.buildings;
 
+import model.map.Tile;
+
 public interface IActiveBuilding {
 
     int getHP();

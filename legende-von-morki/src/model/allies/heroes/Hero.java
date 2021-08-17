@@ -1,19 +1,19 @@
 package model.allies.heroes;
 
 import model.AGameEntity;
-import model.enemies.Enemy;
+import model.enemies.AEmeny;
 import model.map.Tile;
 import model.skills.ISkill;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Hero extends AGameEntity {
+public abstract class Hero extends AGameEntity {
 
     private ArrayList<ISkill> skills;
     private int level = 0;
 
-    public Hero(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe, ArrayList<ISkill> skills) {
+    public Hero(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe, ArrayList<ISkill> skills, Tile tile) {
         this.setHp(hp);
         this.setDmg(dmg);
         this.setSpeed(speed);
@@ -22,6 +22,7 @@ public class Hero extends AGameEntity {
         this.setAP(ap);
         this.setAoe(aoe);
         this.skills = skills;
+        this.addTo(tile);
     }
 
     public ArrayList<ISkill> getSkills() {
@@ -53,7 +54,7 @@ public class Hero extends AGameEntity {
     }
 
     @Override
-    public void attack(Enemy target) {
+    public void attack(AEmeny target) {
 
     }
 

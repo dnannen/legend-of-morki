@@ -6,9 +6,9 @@ import model.map.Tile;
 
 import java.util.List;
 
-public class Enemy extends AGameEntity {
+public abstract class AEmeny extends AGameEntity {
 
-    public Enemy(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe) {
+    public AEmeny(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe, Tile tile) {
         this.setHp(hp);
         this.setDmg(dmg);
         this.setSpeed(speed);
@@ -20,6 +20,7 @@ public class Enemy extends AGameEntity {
         } else {
             this.setAoe(aoe);
         }
+        this.addTo(tile);
     }
 
     @Override
@@ -33,17 +34,8 @@ public class Enemy extends AGameEntity {
     }
 
     @Override
-    public void attack(Enemy target) {
+    public void attack(AEmeny target) {
 
     }
 
-    @Override
-    public Tile getTile() {
-        return null;
-    }
-
-    @Override
-    public void addTo(Tile tile) {
-
-    }
 }

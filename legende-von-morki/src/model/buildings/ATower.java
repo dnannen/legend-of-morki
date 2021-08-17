@@ -1,11 +1,16 @@
 package model.buildings;
 
 import model.AGameEntity;
-import model.allies.Ally;
+import model.allies.AAlly;
+import model.allies.siegeweapons.ASiegeWeapon;
+import model.allies.soldiers.Engineer;
+import model.map.Tile;
 
 import java.util.ArrayList;
 
 public abstract class ATower implements IActiveBuilding {
+
+    private Tile tile;
 
     private final int MAX_SOLDIERS = 6;
     private final int MAX_SIEGE_WEAPONS = 2;
@@ -16,13 +21,22 @@ public abstract class ATower implements IActiveBuilding {
     private ArrayList<AGameEntity> soldiers;
     private ArrayList<AGameEntity> siegeWeapons;
 
+    public ATower(Tile tile) {
+        this.tile = tile;
+        this.level = 1;
+        this.hp = 300;
+        this.maintained = false;
+    }
+
     @Override
     public int getHP() {
         return this.hp;
     }
 
     @Override
-    public int getLevel(){ return this.level; }
+    public int getLevel() {
+        return this.level;
+    }
 
     @Override
     public void setHP(int hp) {
@@ -35,26 +49,36 @@ public abstract class ATower implements IActiveBuilding {
     }
 
     @Override
-    public  void LevelUp(int level) { this.level = this.level ++; }
+    public  void LevelUp(int level) {
+        this.level++;
+    }
 
     @Override
-    public void destroy() {/*TODO implement method to add towers onto tiles */}
+    public void destroy() {
+        this.tile = null;
+    }
 
-    public void addSoldier(Ally soldier) {
+    public void addSoldier(AAlly soldier) {
         if (soldiers.size() < MAX_SOLDIERS) {
             this.soldiers.add(soldier);
+            if (!this.maintained && soldier instanceof Engineer) {
+                this.maintained = true;
+            }
         }
     }
 
-    public void killSoldier(Ally soldier) {
+    public void killSoldier(AAlly soldier) {
         this.soldiers.remove(soldier);
     }
 
-    public void addSiegeWeapon() {
-        //TODO, no siege weapons in the game yet
+    public void addSiegeWeapon(ASiegeWeapon sw) {
+        if (this.siegeWeapons.size() < MAX_SIEGE_WEAPONS) {
+            this.siegeWeapons.add(sw);
+        }
     }
 
+    //TODO assuming the foremost weapon gets destroyed
     public void destroySiegeWeapon() {
-        //TODO, no siege weapons in the game yet
+        this.siegeWeapons.remove(this.siegeWeapons.size() - 1);
     }
 }

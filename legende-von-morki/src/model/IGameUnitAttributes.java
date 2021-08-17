@@ -1,6 +1,8 @@
 package model;
 
-public interface IGameEntityAttributes {
+import model.map.Tile;
+
+public interface IGameUnitAttributes {
 
     int getHp();
 
@@ -30,6 +32,8 @@ public interface IGameEntityAttributes {
 
     void setAoe(boolean aoe);
 
-    //TODO Position, Field, adjacency
+    Tile getTile();
+
+    void addTo(Tile tile);
 
 }
