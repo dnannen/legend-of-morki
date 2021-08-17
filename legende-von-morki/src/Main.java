@@ -1,3 +1,4 @@
+import model.allies.soldiers.Archer;
 import model.map.Map;
 import model.map.Tile;
 
@@ -7,22 +8,14 @@ public class Main {
 
     public static void main(String[] args) {
         Map map = new Map(10, 10);
+        Archer archer = new Archer(map.getPath().get(map.getPath().size() - 1));
 
-        List<Tile> path = map.getPath();
-        List<Tile> scenery = map.getScenery();
+        System.out.print(map.getTile(
+                         map.getPath().get(map.getPath().size() - 1).getCoordinates().get(0),
+                         map.getPath().get(map.getPath().size() - 1).getCoordinates().get(1)
+                ).getCurrentUnitsOnTile()
+        );
+        //TODO doesnt work, probably mismatch between indices
 
-        /*for (int i = 0; i < map.size(); i++) {
-            System.out.println(map.getTileFromID(i).getCoordinates());
-        }*/
-
-        /*for (Tile tile : path) {
-            System.out.println(tile.getCoordinates());
-            System.out.println(tile.isPath());
-        }*/
-
-        /*for (Tile tile : scenery) {
-            System.out.println(tile.getCoordinates());
-            System.out.println(tile.isScenery());
-        }*/
     }
 }
