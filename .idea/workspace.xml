@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="pulled dev.&#10;created engineer and started on rage.&#10;need tower functions and attack functions for it to work">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/ATower.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/ATower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/IActiveBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/IActiveBuilding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/Enemy.java" afterDir="false" />
+    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="Started on towers so we could maybe try to put units on to towers.">
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/EvilMage.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/EvilMage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629132757287</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Started on towers so we could maybe try to put units on to towers.">
+      <created>1629203896495</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1629203896495</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,6 +186,7 @@
     <MESSAGE value="Path now generates as Tile-List. Marking scenery works now." />
     <MESSAGE value="SetOfCoordinates was replaced, all info is now directly in the Tiles. Tests for map- and path-generation all produce good results." />
     <MESSAGE value="pulled dev.&#10;created engineer and started on rage.&#10;need tower functions and attack functions for it to work" />
-    <option name="LAST_COMMIT_MESSAGE" value="pulled dev.&#10;created engineer and started on rage.&#10;need tower functions and attack functions for it to work" />
+    <MESSAGE value="Started on towers so we could maybe try to put units on to towers." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started on towers so we could maybe try to put units on to towers." />
   </component>
 </project>

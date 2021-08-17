@@ -4,8 +4,8 @@ import model.enemies.Enemy;
 
 public class EvilMage extends Enemy {
 
-    public EvilMage(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe) {
-        super(hp, dmg, speed, attackspeed, armour, ap, aoe);
+    public EvilMage() {
+        super(45, 15, 1, 0.75, 25, 50, true);
     }
 
     //TODO special abilitie, damages all entities in the tiles around him for half of his dmg
