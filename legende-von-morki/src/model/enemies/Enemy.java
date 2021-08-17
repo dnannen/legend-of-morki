@@ -2,6 +2,9 @@ package model.enemies;
 
 import model.AGameEntity;
 import model.enemies.grunts.EvilMage;
+import model.map.Tile;
+
+import java.util.List;
 
 public class Enemy extends AGameEntity {
 
@@ -21,6 +24,26 @@ public class Enemy extends AGameEntity {
 
     @Override
     public void die() {
+
+    }
+
+    @Override
+    public void move(List<Tile> path) {
+
+    }
+
+    @Override
+    public void attack(Enemy target) {
+
+    }
+
+    @Override
+    public Tile getTile() {
+        return null;
+    }
+
+    @Override
+    public void addTo(Tile tile) {
 
     }
 }

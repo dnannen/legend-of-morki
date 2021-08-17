@@ -12,6 +12,7 @@ public abstract class ATower implements IActiveBuilding {
 
     private int hp;
     private boolean maintained;
+    private int level;
     private ArrayList<AGameEntity> soldiers;
     private ArrayList<AGameEntity> siegeWeapons;
 
@@ -19,6 +20,9 @@ public abstract class ATower implements IActiveBuilding {
     public int getHP() {
         return this.hp;
     }
+
+    @Override
+    public int getLevel(){ return this.level; }
 
     @Override
     public void setHP(int hp) {
@@ -29,6 +33,12 @@ public abstract class ATower implements IActiveBuilding {
     public void setMaintained(boolean maintained) {
         this.maintained = maintained;
     }
+
+    @Override
+    public  void LevelUp(int level) { this.level = this.level ++; }
+
+    @Override
+    public void destroy() {/*TODO implement method to add towers onto tiles */}
 
     public void addSoldier(Ally soldier) {
         if (soldiers.size() < MAX_SOLDIERS) {

@@ -1,9 +1,12 @@
 package model.allies.heroes;
 
 import model.AGameEntity;
+import model.enemies.Enemy;
+import model.map.Tile;
 import model.skills.ISkill;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Hero extends AGameEntity {
 
@@ -41,6 +44,26 @@ public class Hero extends AGameEntity {
 
     @Override
     public void die() {
+
+    }
+
+    @Override
+    public void move(List<Tile> path) {
+
+    }
+
+    @Override
+    public void attack(Enemy target) {
+
+    }
+
+    @Override
+    public Tile getTile() {
+        return null;
+    }
+
+    @Override
+    public void addTo(Tile tile) {
 
     }
 

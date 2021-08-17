@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="pulled dev.&#10;created engineer and started on rage.&#10;need tower functions and attack functions for it to work">
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/affiliation/Guild.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/affiliation/IAffiliation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/affiliation/Origin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/affiliation/Races.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/affiliation/Religion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/IActiveGameEntityAbilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/IActiveGameEntityAbilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/Ally.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/Ally.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Archer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Berserk.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Berserk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Catapult.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Catapult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Engineer.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Engineer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Paladin.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Paladin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/ATower.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/ATower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/IActiveBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/IActiveBuilding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/Enemy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
