@@ -8,12 +8,12 @@ import model.skills.ISkill;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Hero extends AGameEntity {
+public abstract class AHero extends AGameEntity {
 
     private ArrayList<ISkill> skills;
     private int level = 0;
 
-    public Hero(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe, ArrayList<ISkill> skills, Tile tile) {
+    public AHero(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe, ArrayList<ISkill> skills, Tile tile) {
         this.setHp(hp);
         this.setDmg(dmg);
         this.setSpeed(speed);
@@ -22,7 +22,9 @@ public abstract class Hero extends AGameEntity {
         this.setAP(ap);
         this.setAoe(aoe);
         this.skills = skills;
+
         this.addTo(tile);
+        tile.enterUnit(this);
     }
 
     public ArrayList<ISkill> getSkills() {

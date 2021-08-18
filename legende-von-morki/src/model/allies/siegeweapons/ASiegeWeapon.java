@@ -8,6 +8,8 @@ import java.util.List;
 
 public abstract class ASiegeWeapon extends AGameEntity {
 
+    //this class is currently unused
+
     @Override
     public void die() {
 

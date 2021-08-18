@@ -20,7 +20,9 @@ public abstract class AEmeny extends AGameEntity {
         } else {
             this.setAoe(aoe);
         }
+
         this.addTo(tile);
+        tile.enterUnit(this);
     }
 
     @Override

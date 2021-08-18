@@ -2,7 +2,6 @@ package model.map;
 
 import model.AGameEntity;
 import model.buildings.ATower;
-import model.buildings.IActiveBuilding;
 
 import java.util.ArrayList;
 import java.util.List;

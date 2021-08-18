@@ -16,7 +16,9 @@ public abstract class AAlly extends AGameEntity {
         this.setArmour(armour);
         this.setAP(ap);
         this.setAoe(aoe);
+
         this.addTo(tile);
+        tile.enterUnit(this);
     }
 
     @Override
