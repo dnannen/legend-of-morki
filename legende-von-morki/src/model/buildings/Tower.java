@@ -1,6 +1,5 @@
 package model.buildings;
 
-import model.AGameEntity;
 import model.allies.AAlly;
 import model.allies.siegeweapons.ASiegeWeapon;
 import model.allies.soldiers.Engineer;
@@ -8,7 +7,7 @@ import model.map.Tile;
 
 import java.util.ArrayList;
 
-public abstract class ATower implements IActiveBuilding {
+public class Tower implements IActiveBuilding {
 
     private Tile tile;
 
@@ -18,14 +17,15 @@ public abstract class ATower implements IActiveBuilding {
     private int hp;
     private boolean maintained;
     private int level;
-    private ArrayList<AGameEntity> soldiers;
-    private ArrayList<AGameEntity> siegeWeapons;
+    private ArrayList<AAlly> soldiers = new ArrayList<>(MAX_SOLDIERS);
+    private ArrayList<ASiegeWeapon> siegeWeapons = new ArrayList<>(MAX_SIEGE_WEAPONS);
 
-    public ATower(Tile tile) {
-        this.tile = tile;
+    public Tower(Tile tile) {
         this.level = 1;
         this.hp = 300;
         this.maintained = false;
+
+        this.tile = tile;
     }
 
     @Override
@@ -44,12 +44,22 @@ public abstract class ATower implements IActiveBuilding {
     }
 
     @Override
-    public void setMaintained(boolean maintained) {
-        this.maintained = maintained;
+    public boolean getMaintained() {
+        return this.maintained;
     }
 
     @Override
-    public  void LevelUp(int level) {
+    public ArrayList<AAlly> getSoldiers() {
+        return this.soldiers;
+    }
+
+    @Override
+    public ArrayList<ASiegeWeapon> getSiegeWeapons() {
+        return this.siegeWeapons;
+    }
+
+    @Override
+    public  void levelUp(int level) {
         this.level++;
     }
 
@@ -77,8 +87,7 @@ public abstract class ATower implements IActiveBuilding {
         }
     }
 
-    //TODO assuming the foremost weapon gets destroyed
-    public void destroySiegeWeapon() {
-        this.siegeWeapons.remove(this.siegeWeapons.size() - 1);
+    public void destroySiegeWeapon(ASiegeWeapon sw) {
+        this.siegeWeapons.remove(sw);
     }
 }

@@ -8,7 +8,18 @@ import java.util.List;
 
 public abstract class ASiegeWeapon extends AGameEntity {
 
-    //this class is currently unused
+    public ASiegeWeapon(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe, Tile tile) {
+        this.setHp(hp);
+        this.setDmg(dmg);
+        this.setSpeed(speed);
+        this.setAttackspeed(attackspeed);
+        this.setArmour(armour);
+        this.setAP(ap);
+        this.setAoe(aoe);
+
+        this.addTo(tile);
+        tile.enterUnit(this);
+    }
 
     @Override
     public void die() {

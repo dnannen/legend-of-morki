@@ -1,6 +1,10 @@
 package model.buildings;
 
+import model.allies.AAlly;
+import model.allies.siegeweapons.ASiegeWeapon;
 import model.map.Tile;
+
+import java.util.ArrayList;
 
 public interface IActiveBuilding {
 
@@ -10,9 +14,13 @@ public interface IActiveBuilding {
 
     void setHP(int hp);
 
-    void setMaintained(boolean maintained);
+    boolean getMaintained();
 
-    void LevelUp(int level);
+    ArrayList<AAlly> getSoldiers();
+
+    ArrayList<ASiegeWeapon> getSiegeWeapons();
+
+    void levelUp(int level);
 
     void destroy();
 }

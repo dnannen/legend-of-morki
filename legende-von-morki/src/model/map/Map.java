@@ -26,7 +26,7 @@ public class Map implements IMap {
         public void create() {
         int x = 1;
         int y = 1;
-        int tileID = 1;
+        int tileID = 0;
 
         while (true) {
             this.tiles.add(new Tile(tileID, x, y));
@@ -40,13 +40,13 @@ public class Map implements IMap {
             }
         }
         this.path = createPath();
-        for (Tile tile : path) {
-            tile.setPathTile(true);
+        for (Tile value : this.path) {
+            this.tiles.get(value.getID()).setPathTile(true);
         }
 
         this.scenery = markScenery();
-        for (Tile tile : scenery) {
-            tile.setSceneryTile(true);
+        for (Tile value : this.scenery) {
+            this.tiles.get(value.getID()).setPathTile(true);
         }
 
     }
@@ -58,7 +58,7 @@ public class Map implements IMap {
 
     @Override
     public Tile getTile(int x, int y) {
-        return this.tiles.get((x * 10 + y) - 10);
+        return this.tiles.get((x * 10 + y) - 11);
     }
 
     @Override
@@ -81,23 +81,23 @@ public class Map implements IMap {
         while (currentDepth < this.WIDTH) {
             double strayChance = Math.random() * 100;
 
-            if (strayChance <= 25 && rightStray < MAX_STRAY) {
+            if (strayChance <= 30 && rightStray < MAX_STRAY) {
                 rightStray++;
                 currentBreadth++;
 
-                pathTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
-                pathTiles.add(new Tile((currentDepth + 1) * 10 + currentBreadth - 10, currentDepth + 1, currentBreadth));
+                pathTiles.add(this.getTile(currentDepth, currentBreadth));
+                pathTiles.add(this.getTile(currentDepth + 1, currentBreadth));
                 currentDepth++;
-            } else if (strayChance >= 75 && leftStray < MAX_STRAY) {
+            } else if (strayChance >= 70 && leftStray < MAX_STRAY) {
                 leftStray++;
                 currentBreadth--;
 
-                pathTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
-                pathTiles.add(new Tile((currentDepth + 1) * 10 + currentBreadth - 10, currentDepth + 1, currentBreadth));
+                pathTiles.add(this.getTile(currentDepth, currentBreadth));
+                pathTiles.add(this.getTile(currentDepth + 1, currentBreadth));
                 currentDepth++;
             } else {
                 currentDepth++;
-                pathTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
+                pathTiles.add(this.getTile(currentDepth, currentBreadth));
             }
         }
         return pathTiles;
@@ -121,13 +121,13 @@ public class Map implements IMap {
 
                 currentBreadth = tile.getCoordinates().get(1) - 3;
                 while (currentBreadth >= 1) {
-                    sceneryTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
+                    sceneryTiles.add(this.getTile(currentDepth, currentBreadth));
                      currentBreadth--;
                 }
 
                 currentBreadth = tile.getCoordinates().get(1) + 3;
                 while (currentBreadth <= 10) {
-                    sceneryTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
+                    sceneryTiles.add(this.getTile(currentDepth, currentBreadth));
                     currentBreadth++;
                 }
                 currentDepth++;

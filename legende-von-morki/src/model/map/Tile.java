@@ -1,7 +1,7 @@
 package model.map;
 
 import model.AGameEntity;
-import model.buildings.ATower;
+import model.buildings.Tower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ public class Tile {
     private final List<Integer> COORDINATES = new ArrayList<>();
 
     private ArrayList<AGameEntity> currentUnitsOnTile;
-    private ATower tower;
+    private Tower tower;
 
     private boolean isPath;
     private boolean isScenery;
@@ -25,7 +25,7 @@ public class Tile {
         this.currentUnitsOnTile = new ArrayList<>();
     }
 
-    //TODO after the addition of towers, we need lots of safety nets to avoid fault-states
+    //TODO need lots of safety nets to avoid fault-states
 
     public int getID() {
         return this.ID;
@@ -81,13 +81,20 @@ public class Tile {
         this.isScenery = scenery;
     }
 
-    public void placeTower(ATower tower) {
-        this.hasTower = true;
-        this.currentUnitsOnTile = null;
-        this.tower = tower;
+    public void placeTower() {
+        //TODO add exception for this
+        if (!this.hasTower && (!this.isPath || !this.isScenery)) {
+            this.hasTower = true;
+            this.tower = new Tower(this);
+            this.currentUnitsOnTile = null;
+        }
     }
 
     public void hasTower(boolean t) {
         this.hasTower = t;
+    }
+
+    public Tower getTower() {
+        return this.tower;
     }
 }
