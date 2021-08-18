@@ -40,7 +40,12 @@ public class Tile {
     }
 
     public void enterUnit(AGameEntity unit) {
-        this.currentUnitsOnTile.add(unit);
+        if ( unit.getSpeed() > 0 && this.isPath ) {
+            this.currentUnitsOnTile.add(unit);
+        } else {
+            System.out.println("error");
+            //TODO exception
+        }
     }
 
     public void removeUnit(AGameEntity unit) {
