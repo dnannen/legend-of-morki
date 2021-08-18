@@ -41,12 +41,12 @@ public class Map implements IMap {
         }
         this.path = createPath();
         for (Tile value : this.path) {
-            this.tiles.get(value.getID()).setPathTile(true);
+            value.setPathTile(true);
         }
 
         this.scenery = markScenery();
         for (Tile value : this.scenery) {
-            this.tiles.get(value.getID()).setPathTile(true);
+            value.setSceneryTile(true);
         }
 
     }
@@ -76,7 +76,7 @@ public class Map implements IMap {
         int leftStray = 0;
 
         List<Tile> pathTiles = new ArrayList<>();
-        pathTiles.add(new Tile(currentDepth * 10 + currentBreadth - 10, currentDepth, currentBreadth));
+        pathTiles.add(this.getTile(currentDepth, currentBreadth));
 
         while (currentDepth < this.WIDTH) {
             double strayChance = Math.random() * 100;

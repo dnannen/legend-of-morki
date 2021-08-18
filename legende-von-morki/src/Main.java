@@ -1,11 +1,18 @@
 import model.allies.soldiers.Archer;
 import model.map.Map;
+import model.map.Tile;
 
 
 public class Main {
 
     public static void main(String[] args) {
         Map map = new Map(10, 10);
+        for(Tile tile : map.getPath()){
+            System.out.println(tile.getCoordinates());
+            System.out.println(tile.isPath());
+            System.out.println(tile);
+            System.out.println(map.getTile(tile.getCoordinates().get(0), tile.getCoordinates().get(1)));
+        }
 
         Archer archer = new Archer(map.getTile(5, 5));
 

@@ -83,10 +83,12 @@ public class Tile {
 
     public void placeTower() {
         //TODO add exception for this
-        if (!this.hasTower && (!this.isPath || !this.isScenery)) {
+        if (!(this.hasTower || this.isPath || this.isScenery)) {
             this.hasTower = true;
             this.tower = new Tower(this);
             this.currentUnitsOnTile = null;
+        } else {
+            System.out.println("erorr");
         }
     }
 
