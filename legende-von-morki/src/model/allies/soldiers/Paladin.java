@@ -20,7 +20,7 @@ public class Paladin extends AAlly {
             this.setDmg(this.getDmg() * 2);
         } else {
             this.setHp(0);
-            //TODO delete instead of set 0?
+            this.getTile().removeUnit(this);
         }
     }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Morki extends Hero {
 
-    public Morki(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe, ArrayList<ISkill> skills, Tile tile) {
-        super(hp, dmg, speed, attackspeed, armour, ap, aoe, skills, tile);
+    public Morki( ArrayList<ISkill> skills, Tile tile) {
+        super(200, 25, 2, 0.5, 5, 5, false, skills, tile);
     }
 }

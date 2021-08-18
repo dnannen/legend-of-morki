@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="Minor tweaks, All units not need a Tile to get initialized. Working towards being able to spawn units on tiles.">
+    <list default="true" id="fb814d04-c547-473b-b80f-f5c52db5d837" name="Changes" comment="Started on towers so we could maybe try to put units on to towers.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/Morki.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/Morki.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Berserk.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Berserk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Engineer.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Engineer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Paladin.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Paladin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/skills/ISkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/skills/ISkill.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
