@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added some functionality to skills.&#10;Tidied up some classes and put their content into parent-classes.&#10;Fixed and tweaked minor things.">
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/AGameStats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/gamefield/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/gamefield/GameField.java" afterDir="false" />
+    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added classes for the game and its current status.&#10;Pre-commit for merge.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,15 +19,58 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="game" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="src" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Added classes for the game and its current status.&#10;Pre-commit for merge.">
+      <created>1629467935461</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1629467935461</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added classes for the game and its current status.&#10;Pre-commit for merge." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added classes for the game and its current status.&#10;Pre-commit for merge." />
   </component>
 </project>

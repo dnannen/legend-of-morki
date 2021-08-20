@@ -25,8 +25,6 @@ public class Tile {
         this.currentUnitsOnTile = new ArrayList<>();
     }
 
-    //TODO need lots of safety nets to avoid fault-states
-
     public int getID() {
         return this.ID;
     }
@@ -40,11 +38,8 @@ public class Tile {
     }
 
     public void enterUnit(AGameEntity unit) {
-        if ( unit.getSpeed() > 0 && this.isPath ) {
+        if (unit.getSpeed() > 0 && this.isPath) {
             this.currentUnitsOnTile.add(unit);
-        } else {
-            System.out.println("error");
-            //TODO exception
         }
     }
 
@@ -52,22 +47,24 @@ public class Tile {
         this.currentUnitsOnTile.remove(unit);
     }
 
-    public void removeForemostUnit() {
-        this.currentUnitsOnTile.remove(this.currentUnitsOnTile.size() - 1);
-    }
-
-    public boolean isEmpty() {
-        return (this.currentUnitsOnTile.isEmpty());
-    }
-
     public void dealAoeDamage(int dmg) {
         for (AGameEntity currentUnit : this.currentUnitsOnTile) {
-            int damage = dmg - currentUnit.getArmour();
-            currentUnit.setHp(currentUnit.getHp() - damage);
-            if (currentUnit.getHp() <= 0) {
-                currentUnit.die();
+            currentUnit.setHp(currentUnit.getHp() - (dmg - currentUnit.getArmour()));
+        }
+    }
+
+    //TODO doesnt work for tiles on the map's fringe
+    public List<Tile> getSurroundingTiles(Map map) {
+        List<Tile> range = new ArrayList<>(8);
+        int[] next = new int[] {-11, -10, -9, -1, 1, 9, 10, 11};
+
+        for (int i : next) {
+            if (this.getID() + i > 0 && this.getID() + i < 99) {
+                range.add(map.getTileFromID(this.getID() + i));
             }
         }
+
+        return range;
     }
 
     public boolean isPath() {
@@ -87,13 +84,10 @@ public class Tile {
     }
 
     public void placeTower() {
-        //TODO add exception for this
         if (!(this.hasTower || this.isPath || this.isScenery)) {
             this.hasTower = true;
             this.tower = new Tower(this);
             this.currentUnitsOnTile = null;
-        } else {
-            System.out.println("erorr");
         }
     }
 
