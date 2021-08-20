@@ -1,11 +1,11 @@
 package model.enemies.grunts;
 
-import model.enemies.Enemy;
+import model.enemies.AEnemy;
+import model.map.Tile;
 
-public class Tank extends Enemy {
+public class Tank extends AEnemy {
 
-    //100, 5, 1 , 0.5, 25, 5, false
-    public Tank(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe) {
-        super(hp, dmg, speed, attackspeed, armour, ap, aoe);
+    public Tank(Tile tile) {
+        super(100, 5, 1, 0.5, 25, 5, false, tile);
     }
 }

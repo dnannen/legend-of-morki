@@ -1,12 +1,12 @@
 package model.allies.heroes;
 
-import model.skills.ISkill;
+import model.map.Tile;
 
-import java.util.ArrayList;
+public class Morki extends AHero {
 
-public class Morki extends Hero {
-
-    public Morki(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe, ArrayList<ISkill> skills) {
-        super(hp, dmg, speed, attackspeed, armour, ap, aoe, skills);
+    public Morki(Tile tile) {
+        super(200, 25, 2, 0.5, 5, 5, false, tile);
     }
+
+    //TODO hardcode skills for this hero
 }

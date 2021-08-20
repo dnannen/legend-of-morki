@@ -1,6 +1,8 @@
 package model;
 
-public abstract class AGameEntity implements IActiveGameEntityAbilities, IGameEntityAttributes {
+import model.map.Tile;
+
+public abstract class AGameEntity implements IActiveGameUnitAbilities, IGameUnitAttributes {
 
     private int hp;
     private int dmg;
@@ -9,9 +11,25 @@ public abstract class AGameEntity implements IActiveGameEntityAbilities, IGameEn
     private int armour;
     private int ap;
     private boolean aoe;
+    private Tile tile;
 
     @Override
-    public abstract void die();
+    public void die() {
+        this.setTile(null);
+        this.getTile().removeUnit(this);
+    }
+
+    @Override
+    public void move(Tile destination) {
+        this.getTile().removeUnit(this);
+        destination.enterUnit(this);
+        this.setTile(destination);
+    }
+
+    @Override
+    public void attack(AGameEntity target) {
+        target.setHp(target.getHp() - (this.getDmg() - target.getArmour()));
+    }
 
     @Override
     public int getHp() {
@@ -81,5 +99,15 @@ public abstract class AGameEntity implements IActiveGameEntityAbilities, IGameEn
     @Override
     public void setAoe(boolean aoe) {
         this.aoe = aoe;
+    }
+
+    @Override
+    public Tile getTile() {
+        return this.tile;
+    }
+
+    @Override
+    public void setTile(Tile tile) {
+        this.tile = tile;
     }
 }

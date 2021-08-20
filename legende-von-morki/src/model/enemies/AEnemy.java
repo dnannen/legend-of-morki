@@ -2,10 +2,13 @@ package model.enemies;
 
 import model.AGameEntity;
 import model.enemies.grunts.EvilMage;
+import model.map.Tile;
 
-public class Enemy extends AGameEntity {
+import java.util.List;
 
-    public Enemy(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe) {
+public abstract class AEnemy extends AGameEntity {
+
+    public AEnemy(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe, Tile tile) {
         this.setHp(hp);
         this.setDmg(dmg);
         this.setSpeed(speed);
@@ -17,10 +20,9 @@ public class Enemy extends AGameEntity {
         } else {
             this.setAoe(aoe);
         }
+
+        this.setTile(tile);
+        tile.enterUnit(this);
     }
 
-    @Override
-    public void die() {
-
-    }
 }
