@@ -1,11 +1,11 @@
 package model.skills;
 
-public class TacticSkill implements ISkill {
+import model.allies.heroes.AHero;
 
-    public TacticSkill() {
-        //this.apUsage = 0.12;
-        //this.damageUsage = 0;
-        //this.armorUsage = 0.4;
+public class TacticSkill extends ASkill {
+
+    public TacticSkill(AHero hero) {
+        super("Master Tactician", hero, 0.12, 0, 0.4, 0);
     }
 
     @Override

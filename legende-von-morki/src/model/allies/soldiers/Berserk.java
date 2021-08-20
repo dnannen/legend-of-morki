@@ -1,11 +1,14 @@
 package model.allies.soldiers;
 
+import model.AGameEntity;
 import model.allies.AAlly;
-import model.enemies.AEmeny;
+import model.enemies.AEnemy;
 import model.map.Tile;
 
 public class Berserk extends AAlly {
+
     private boolean rage = false;
+
     public Berserk(Tile tile) {
         super(100, 30, 0, 1, 25, 0, false, tile);
     }
@@ -17,15 +20,15 @@ public class Berserk extends AAlly {
      */
     public void rage() {
         //TODO turret position has a enemy one tile around it
-        setSpeed(1);
-        rage = true;
-        setDmg((int) (this.getDmg() * 2.5));
-        setAttackspeed(this.getAttackspeed() * 2);
+        this.setSpeed(1);
+        this.rage = true;
+        this.setDmg((int) (this.getDmg() * 2.5));
+        this.setAttackspeed(this.getAttackspeed() * 2);
     }
 
     @Override
-    public void attack(AEmeny target) {
-        if( rage == true ){
+    public void attack(AGameEntity target) {
+        if(rage && target instanceof AEnemy) {
             super.attack(target);
             this.setHp(this.getHp() - 3);
         } else {

@@ -14,7 +14,22 @@ public abstract class AGameEntity implements IActiveGameUnitAbilities, IGameUnit
     private Tile tile;
 
     @Override
-    public abstract void die();
+    public void die() {
+        this.setTile(null);
+        this.getTile().removeUnit(this);
+    }
+
+    @Override
+    public void move(Tile destination) {
+        this.getTile().removeUnit(this);
+        tile.enterUnit(this);
+        this.setTile(tile);
+    }
+
+    @Override
+    public void attack(AGameEntity target) {
+        target.setHp(target.getHp() - (this.getDmg() - target.getArmour()));
+    }
 
     @Override
     public int getHp() {
@@ -92,7 +107,7 @@ public abstract class AGameEntity implements IActiveGameUnitAbilities, IGameUnit
     }
 
     @Override
-    public void addTo(Tile tile) {
+    public void setTile(Tile tile) {
         this.tile = tile;
     }
 }

@@ -1,19 +1,18 @@
 package model.allies.heroes;
 
 import model.AGameEntity;
-import model.enemies.AEmeny;
+import model.enemies.AEnemy;
 import model.map.Tile;
 import model.skills.ISkill;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AHero extends AGameEntity {
 
-    private ArrayList<ISkill> skills;
+    private ISkill[] skills = new ISkill[2];
     private int level = 0;
 
-    public AHero(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe, ArrayList<ISkill> skills, Tile tile) {
+    public AHero(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe, Tile tile) {
         this.setHp(hp);
         this.setDmg(dmg);
         this.setSpeed(speed);
@@ -21,54 +20,27 @@ public abstract class AHero extends AGameEntity {
         this.setArmour(armour);
         this.setAP(ap);
         this.setAoe(aoe);
-        this.skills = skills;
 
-        this.addTo(tile);
+        this.setTile(tile);
         tile.enterUnit(this);
     }
 
-    public ArrayList<ISkill> getSkills() {
-        return this.skills;
-    }
-
-    public void addSkill(ISkill skill) {
-        if (skills.size() < 3) {
-            skills.add(skill);
+    public void setSkills(ISkill[] newSkills) {
+        if (newSkills.length == skills.length) {
+            skills = newSkills;
         }
     }
 
-    public void removeSkill(ISkill skill) {
-        this.skills.remove(skill);
+    public ISkill getSkill(int index) {
+        if (0 <= index && index <= 2) {
+            return this.skills[index];
+        } else {
+            return null;
+        }
     }
 
     public void useSkill(ISkill skill) {
-        //TODO
+        skill.use();
     }
 
-    @Override
-    public void die() {
-
-    }
-
-    @Override
-    public void move(List<Tile> path) {
-
-    }
-
-    @Override
-    public void attack(AEmeny target) {
-
-    }
-
-    @Override
-    public Tile getTile() {
-        return null;
-    }
-
-    @Override
-    public void addTo(Tile tile) {
-
-    }
-
-    //TODO methods for leveling
 }

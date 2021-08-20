@@ -1,9 +1,9 @@
 package model.enemies.grunts;
 
-import model.enemies.AEmeny;
+import model.enemies.AEnemy;
 import model.map.Tile;
 
-public class EvilMage extends AEmeny {
+public class EvilMage extends AEnemy {
 
     public EvilMage(Tile tile) {
         super(45, 15, 1, 0.75, 25, 50, true, tile);

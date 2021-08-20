@@ -1,7 +1,7 @@
 package model.allies.siegeweapons;
 
 import model.AGameEntity;
-import model.enemies.AEmeny;
+import model.enemies.AEnemy;
 import model.map.Tile;
 
 import java.util.List;
@@ -17,23 +17,8 @@ public abstract class ASiegeWeapon extends AGameEntity {
         this.setAP(ap);
         this.setAoe(aoe);
 
-        this.addTo(tile);
+        this.setTile(tile);
         tile.enterUnit(this);
-    }
-
-    @Override
-    public void die() {
-
-    }
-
-    @Override
-    public void move(List<Tile> path) {
-
-    }
-
-    @Override
-    public void attack(AEmeny target) {
-
     }
 
 }

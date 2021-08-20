@@ -1,6 +1,6 @@
 package model;
 
-import model.enemies.AEmeny;
+import model.enemies.AEnemy;
 import model.map.Tile;
 
 import java.util.List;
@@ -9,8 +9,8 @@ public interface IActiveGameUnitAbilities {
 
     void die();
 
-    void move(List<Tile> path);
+    void move(Tile destination);
 
-    void attack(AEmeny target);
+    void attack(AGameEntity target);
 
 }

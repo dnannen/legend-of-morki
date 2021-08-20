@@ -34,6 +34,6 @@ public interface IGameUnitAttributes {
 
     Tile getTile();
 
-    void addTo(Tile tile);
+    void setTile(Tile tile);
 
 }
