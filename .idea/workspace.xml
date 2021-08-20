@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added some functionality to skills.&#10;Tidied up some classes and put their content into parent-classes.&#10;Fixed and tweaked minor things.">
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/AGameStats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/gamefield/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/gamefield/GameField.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
