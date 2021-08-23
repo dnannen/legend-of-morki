@@ -1,11 +1,8 @@
 package model.allies.heroes;
 
 import model.AGameEntity;
-import model.enemies.AEnemy;
 import model.map.Tile;
 import model.skills.ISkill;
-
-import java.util.List;
 
 public abstract class AHero extends AGameEntity {
 
@@ -16,7 +13,7 @@ public abstract class AHero extends AGameEntity {
         this.setHp(hp);
         this.setDmg(dmg);
         this.setSpeed(speed);
-        this.setAttackspeed(attackspeed);
+        this.setAttackSpeed(attackspeed);
         this.setArmour(armour);
         this.setAP(ap);
         this.setAoe(aoe);

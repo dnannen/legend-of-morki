@@ -6,8 +6,9 @@ public abstract class AGameEntity implements IActiveGameUnitAbilities, IGameUnit
 
     private int hp;
     private int dmg;
-    private float speed;
-    private double attackspeed;
+    private int range;
+    private double speed;
+    private double attackSpeed;
     private int armour;
     private int ap;
     private boolean aoe;
@@ -52,23 +53,23 @@ public abstract class AGameEntity implements IActiveGameUnitAbilities, IGameUnit
     }
 
     @Override
-    public float getSpeed() {
+    public double getSpeed() {
         return this.speed;
     }
 
     @Override
-    public void setSpeed(float speed) {
+    public void setSpeed(double speed) {
         this.speed = speed;
     }
 
     @Override
-    public double getAttackspeed() {
-        return this.attackspeed;
+    public double getAttackSpeed() {
+        return this.attackSpeed;
     }
 
     @Override
-    public void setAttackspeed(double attackspeed) {
-        this.attackspeed = attackspeed;
+    public void setAttackSpeed(double attackSpeed) {
+        this.attackSpeed = attackSpeed;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package model.allies.soldiers;
+package model.allies.specialunits;
 
 import model.AGameEntity;
 import model.allies.AAlly;
@@ -23,7 +23,7 @@ public class Berserk extends AAlly {
         this.setSpeed(1);
         this.rage = true;
         this.setDmg((int) (this.getDmg() * 2.5));
-        this.setAttackspeed(this.getAttackspeed() * 2);
+        this.setAttackSpeed(this.getAttackSpeed() * 2);
     }
 
     @Override

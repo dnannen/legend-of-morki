@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added classes for the game and its current status.&#10;Pre-commit for merge.">
+    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added method for getting surrounding Tiles, still has a small issue.">
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/ManAtArms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2021_12_30_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2021_12_30__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/AGameEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/AGameEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/IGameUnitAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/IGameUnitAttributes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/AAlly.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/AAlly.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/AHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/AHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/Morki.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/Morki.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/ASiegeWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/ASiegeWeapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Archer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Berserk.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/specialunits/Berserk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Paladin.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/specialunits/Paladin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/AEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/AEnemy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,11 +37,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1x83uuTdTISGveLGOcXiUnHmCg5" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -46,6 +64,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="Added classes for the game and its current status.&#10;Pre-commit for merge.">
       <created>1629467935461</created>
@@ -54,7 +73,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629467935461</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added method for getting surrounding Tiles, still has a small issue.">
+      <created>1629476016584</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1629476016584</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added method for getting surrounding Tiles, still has a small issue." />
+      <created>1629723117306</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1629723117306</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -71,6 +104,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added classes for the game and its current status.&#10;Pre-commit for merge." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added classes for the game and its current status.&#10;Pre-commit for merge." />
+    <MESSAGE value="Added method for getting surrounding Tiles, still has a small issue." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added method for getting surrounding Tiles, still has a small issue." />
   </component>
 </project>

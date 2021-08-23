@@ -12,13 +12,13 @@ public interface IGameUnitAttributes {
 
     void setDmg(int dmg);
 
-    float getSpeed();
+    double getSpeed();
 
-    void setSpeed(float speed);
+    void setSpeed(double speed);
 
-    double getAttackspeed();
+    double getAttackSpeed();
 
-    void setAttackspeed(double attackspeed);
+    void setAttackSpeed(double attackSpeed);
 
     int getArmour();
 
