@@ -1,6 +1,8 @@
 package model.map;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Map implements IMap {
@@ -10,10 +12,8 @@ public class Map implements IMap {
     private final int DEPTH;
     private final int WIDTH;
 
-    //TODO create a new path, that is the reverse of this one for the enemies/allies
-    //private List<Tile> enemiesPath;
-    //private List<Tile> alliesPath;
     private List<Tile> path;
+    private List<Tile> alliedPath;
     private List<Tile> scenery;
 
     public Map(int xLength, int yWidth) {
@@ -43,6 +43,10 @@ public class Map implements IMap {
         for (Tile value : this.path) {
             value.setPathTile(true);
         }
+
+        List<Tile> reverse = this.path;
+        Collections.reverse(reverse);
+        this.alliedPath = reverse;
 
         this.scenery = markScenery();
         for (Tile value : this.scenery) {
@@ -106,6 +110,10 @@ public class Map implements IMap {
 
     public List<Tile> getPath() {
         return this.path;
+    }
+
+    public List<Tile> getAlliedPath() {
+        return this.alliedPath;
     }
 
     @Override

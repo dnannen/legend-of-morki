@@ -21,13 +21,6 @@ public abstract class AGameEntity implements IActiveGameUnitAbilities, IGameUnit
     }
 
     @Override
-    public void move(Tile destination) {
-        this.getTile().removeUnit(this);
-        destination.enterUnit(this);
-        this.setTile(destination);
-    }
-
-    @Override
     public void attack(AGameEntity target) {
         target.setHp(target.getHp() - (this.getDmg() - target.getArmour()));
     }

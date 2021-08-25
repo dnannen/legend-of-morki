@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added minor things. Changed speed variable to double. Added ManAtArms, new troop mechanics have been made.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2021_18_29_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2021_18_29__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/IGameEntityInteractions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/interactionExceptions/InvalidActionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/interactionExceptions/InvalidUnitPlacementException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/interactionExceptions/WrongUnitTypeException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/AGameEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/AGameEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/IActiveGameUnitAbilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/IActiveGameUnitAbilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/AGameStats.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/gamefield/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/GameField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>

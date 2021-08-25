@@ -9,8 +9,6 @@ public interface IActiveGameUnitAbilities {
 
     void die();
 
-    void move(Tile destination);
-
     void attack(AGameEntity target);
 
 }

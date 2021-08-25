@@ -1,4 +1,4 @@
-package model.game.gamefield;
+package model.game;
 
 import model.map.Map;
 
