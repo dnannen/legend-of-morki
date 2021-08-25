@@ -20,13 +20,14 @@ public class Game implements IGameEntityInteractions {
     @Override
     public void spawnUnit(AGameEntity a) {
         a.setTile(this.FIELD.getAlliedPath().get(0));
+        this.FIELD.getAlliedPath().get(0).enterUnit(a);
     }
 
     public void spawnUnit(AAlly a, Tower tower) throws WrongUnitTypeException, InvalidUnitPlacementException {
         if (a instanceof Archer && tower.getSoldiers().size() <= 6) {
             tower.addSoldier(a);
         } else if (!(a instanceof Archer)) {
-            throw new WrongUnitTypeException("Only archers can be placed on towers!");
+            throw new WrongUnitTypeException("Only ranged soldiers can be placed on towers!");
         } else {
             throw new InvalidUnitPlacementException("This unit cannot be placed here!");
         }

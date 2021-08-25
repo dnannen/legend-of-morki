@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added minor things. Changed speed variable to double. Added ManAtArms, new troop mechanics have been made.">
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/IGameEntityInteractions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/interactionExceptions/InvalidActionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/interactionExceptions/InvalidUnitPlacementException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/interactionExceptions/WrongUnitTypeException.java" afterDir="false" />
+    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added functionality to Game and surrounding classes to resolve fights, spawn and move an entity. No tests conducted yet.&#10;&#10;Added the first three Exceptions, make them more detailed later and make them display the error-message to the player without impeding on the game too much (like a view popup).">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/AGameEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/AGameEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/IActiveGameUnitAbilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/IActiveGameUnitAbilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/AGameStats.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/AAlly.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/AAlly.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/AHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/AHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/Morki.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/Morki.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/ASiegeWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/ASiegeWeapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/weapons/Ballista.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/weapons/Ballista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/weapons/Catapult.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/weapons/Catapult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/weapons/Trebuchet.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/weapons/Trebuchet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Archer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Engineer.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Engineer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/ManAtArms.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/ManAtArms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/specialunits/Berserk.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/specialunits/Berserk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/specialunits/Paladin.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/specialunits/Paladin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/AEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/AEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/EvilMage.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/EvilMage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/Sprinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/Sprinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/gamefield/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/GameField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629731150987</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added functionality to Game and surrounding classes to resolve fights, spawn and move an entity. No tests conducted yet.&#10;&#10;Added the first three Exceptions, make them more detailed later and make them display the error-message to the player without impeding on the game too much (like a view popup).">
+      <created>1629907048031</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1629907048031</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +127,7 @@
     <MESSAGE value="Added classes for the game and its current status.&#10;Pre-commit for merge." />
     <MESSAGE value="Added method for getting surrounding Tiles, still has a small issue." />
     <MESSAGE value="Added minor things. Changed speed variable to double. Added ManAtArms, new troop mechanics have been made." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added minor things. Changed speed variable to double. Added ManAtArms, new troop mechanics have been made." />
+    <MESSAGE value="Added functionality to Game and surrounding classes to resolve fights, spawn and move an entity. No tests conducted yet.&#10;&#10;Added the first three Exceptions, make them more detailed later and make them display the error-message to the player without impeding on the game too much (like a view popup)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added functionality to Game and surrounding classes to resolve fights, spawn and move an entity. No tests conducted yet.&#10;&#10;Added the first three Exceptions, make them more detailed later and make them display the error-message to the player without impeding on the game too much (like a view popup)." />
   </component>
 </project>

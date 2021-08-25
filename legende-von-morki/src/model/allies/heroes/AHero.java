@@ -9,7 +9,7 @@ public abstract class AHero extends AGameEntity {
     private ISkill[] skills = new ISkill[2];
     private int level = 0;
 
-    public AHero(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe, Tile tile) {
+    public AHero(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe) {
         this.setHp(hp);
         this.setDmg(dmg);
         this.setSpeed(speed);
@@ -17,9 +17,6 @@ public abstract class AHero extends AGameEntity {
         this.setArmour(armour);
         this.setAP(ap);
         this.setAoe(aoe);
-
-        this.setTile(tile);
-        tile.enterUnit(this);
     }
 
     public void setSkills(ISkill[] newSkills) {

@@ -5,8 +5,8 @@ import model.map.Tile;
 
 public class Ballista extends ASiegeWeapon {
 
-    public Ballista(Tile tile) {
-        super(100, 100, 0, 0.3, 24, 0, false, tile);
+    public Ballista() {
+        super(100, 100, 0, 0.3, 24, 0, false);
     }
 
 }
