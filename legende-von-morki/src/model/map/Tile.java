@@ -53,14 +53,17 @@ public class Tile {
         }
     }
 
-    //TODO doesnt work for tiles on the map's fringe
     public List<Tile> getSurroundingTiles(Map map) {
         List<Tile> range = new ArrayList<>(8);
-        int[] next = new int[] {-11, -10, -9, -1, 1, 9, 10, 11};
+        int[] nextX = new int[] {-1, -1, -1, 0, 0, 1, 1, 1};
+        int[] nextY = new int[] {-1, 0, 1, -1, 1, -1, 0, 1};
 
-        for (int i : next) {
-            if (this.getID() + i > 0 && this.getID() + i < 99) {
-                range.add(map.getTileFromID(this.getID() + i));
+        for (int i = 0; i < 8; i++) {
+            int x = this.getCoordinates().get(0) + nextX[i];
+            int y = this.getCoordinates().get(1) + nextY[i];
+
+            if (x >= 1 && x <= 10 && y >= 1 && y <= 10) {
+                range.add(map.getTile(x, y));
             }
         }
 

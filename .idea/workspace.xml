@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added method for getting surrounding Tiles, still has a small issue.">
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/ManAtArms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2021_12_30_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2021_12_30__Changes_.xml" beforeDir="false" />
+    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added minor things. Changed speed variable to double. Added ManAtArms, new troop mechanics have been made.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2021_18_29_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2021_18_29__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/AGameEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/AGameEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/IGameUnitAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/IGameUnitAttributes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/AAlly.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/AAlly.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/AHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/AHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/Morki.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/Morki.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/ASiegeWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/ASiegeWeapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Archer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Berserk.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/specialunits/Berserk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Paladin.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/allies/specialunits/Paladin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/AEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/AEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +40,7 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -87,7 +79,14 @@
       <option name="presentableId" value="Default" />
       <updated>1629723117306</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added minor things. Changed speed variable to double. Added ManAtArms, new troop mechanics have been made.">
+      <created>1629731150987</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1629731150987</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -105,6 +104,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added classes for the game and its current status.&#10;Pre-commit for merge." />
     <MESSAGE value="Added method for getting surrounding Tiles, still has a small issue." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added method for getting surrounding Tiles, still has a small issue." />
+    <MESSAGE value="Added minor things. Changed speed variable to double. Added ManAtArms, new troop mechanics have been made." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added minor things. Changed speed variable to double. Added ManAtArms, new troop mechanics have been made." />
   </component>
 </project>

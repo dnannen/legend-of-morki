@@ -108,12 +108,12 @@ public class Map implements IMap {
         return this.path;
     }
 
-    //TODO fix
     @Override
     public List<Tile> markScenery() {
         int currentDepth = 1;
         int currentBreadth;
 
+        List<Tile> possibleTiles = new ArrayList<>();
         List<Tile> sceneryTiles = new ArrayList<>();
 
         for (Tile tile : path) {
@@ -121,13 +121,13 @@ public class Map implements IMap {
 
                 currentBreadth = tile.getCoordinates().get(1) - 3;
                 while (currentBreadth >= 1) {
-                    sceneryTiles.add(this.getTile(currentDepth, currentBreadth));
+                    possibleTiles.add(this.getTile(currentDepth, currentBreadth));
                      currentBreadth--;
                 }
 
                 currentBreadth = tile.getCoordinates().get(1) + 3;
                 while (currentBreadth <= 10) {
-                    sceneryTiles.add(this.getTile(currentDepth, currentBreadth));
+                    possibleTiles.add(this.getTile(currentDepth, currentBreadth));
                     currentBreadth++;
                 }
                 currentDepth++;
@@ -135,7 +135,14 @@ public class Map implements IMap {
             }
         }
 
-        return sceneryTiles;
+        //TODO
+        /*for (int i = 0; i < 6; i++) {
+            int random = (int) (Math.random() * 6);
+            sceneryTiles.add(random, possibleTiles.get(random));
+        }*/
+
+        return possibleTiles;
+        //return sceneryTiles;
     }
 
     public List<Tile> getScenery() {
