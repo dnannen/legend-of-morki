@@ -9,6 +9,7 @@ public class EvilMage extends AEnemy {
 
     public EvilMage() {
         super(45, 15, 1, 0.75, 25, true);
+        //TODO change later
         this.setRange(this.getTile().getSurroundingTiles(this.getTile().getMap()));
     }
 

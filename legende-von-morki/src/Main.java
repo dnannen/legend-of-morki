@@ -1,6 +1,8 @@
 import model.allies.soldiers.Archer;
 import model.allies.soldiers.ManAtArms;
 import model.buildings.Tower;
+import model.enemies.grunts.EvilMage;
+import model.enemies.grunts.Tank;
 import model.game.Game;
 import model.game.GameField;
 import model.game.Player;
@@ -27,7 +29,6 @@ public class Main {
         Player jan = new Player();
         Game game = new Game(field, jan);
 
-        //game.placeTower(field.getTile(9, 9)); Exception triggers!
         //game.placeTower(field.getTile(1, 5)); Exception triggers!
         game.placeTower(field.getTile(1, 6));
         game.spawnUnit(new ManAtArms());
@@ -35,9 +36,20 @@ public class Main {
         //game.spawnUnit(new ManAtArms(), new Tower(field.getTile(1, 6))); Exception triggers!
         game.spawnUnit(new Archer(), new Tower(field.getTile(1, 6)));
 
+        EvilMage testRange = new EvilMage();
+        game.spawnUnit(testRange);
+        System.out.println(testRange.getRange());
+
+        Tank test = new Tank();
+        game.spawnUnit(test);
+        System.out.println(test.getRange());
+
+        /*
         System.out.println(field.getTile(1, 5).getCurrentUnitsOnTile()); // []
         System.out.println(field.getTile(1, 5).getTower()); // null
         System.out.println(field.getTile(1, 6).getTower()); //model.buildings.Tower@723279cf
         System.out.println(field.getTile(1, 6).getTower().getSoldiers()); //[] TODO this one doesnt work yet
+        */
     }
+
 }
