@@ -4,8 +4,10 @@ import model.AGameEntity;
 import model.allies.AAlly;
 import model.allies.soldiers.Archer;
 import model.buildings.Tower;
+import model.game.interactionExceptions.InvalidTowerPlacementException;
 import model.game.interactionExceptions.InvalidUnitPlacementException;
 import model.game.interactionExceptions.WrongUnitTypeException;
+import model.map.Tile;
 
 public class Game implements IGameEntityInteractions {
 
@@ -23,6 +25,15 @@ public class Game implements IGameEntityInteractions {
         this.FIELD.getAlliedPath().get(0).enterUnit(a);
     }
 
+    @Override
+    public void placeTower(Tile tile) throws InvalidTowerPlacementException {
+        if (!(tile.hasTower() || tile.isPath() || tile.isScenery())) {
+            tile.setTower(true);
+        } else {
+            throw new InvalidTowerPlacementException("A tower cannot be placed here!");
+        }
+    }
+
     public void spawnUnit(AAlly a, Tower tower) throws WrongUnitTypeException, InvalidUnitPlacementException {
         if (a instanceof Archer && tower.getSoldiers().size() <= 6) {
             tower.addSoldier(a);
@@ -35,7 +46,11 @@ public class Game implements IGameEntityInteractions {
 
     @Override
     public void resolveFight(AGameEntity attacker, AGameEntity target) {
-        attacker.attack(target);
+        if (attacker.isAoe()) {
+            target.getTile().dealAoeDamage(attacker.getDmg());
+        } else {
+            attacker.attack(target);
+        }
         if (target.getHp() <= 0) target.die();
     }
 

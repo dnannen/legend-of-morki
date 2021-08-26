@@ -92,16 +92,18 @@ public class Tile {
         this.isScenery = scenery;
     }
 
-    public void placeTower() {
-        if (!(this.hasTower || this.isPath || this.isScenery)) {
-            this.hasTower = true;
-            this.tower = new Tower(this);
-            this.currentUnitsOnTile = null;
-        }
+    public boolean hasTower() {
+        return this.hasTower;
     }
 
-    public void hasTower(boolean t) {
-        this.hasTower = t;
+    public void setTower(boolean set) {
+        if (set) {
+            this.tower = new Tower(this);
+            this.hasTower = true;
+        } else {
+            this.tower = null;
+            this.hasTower = false;
+        }
     }
 
     public Tower getTower() {
