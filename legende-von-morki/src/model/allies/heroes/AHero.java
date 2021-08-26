@@ -1,10 +1,7 @@
 package model.allies.heroes;
 
 import model.AGameEntity;
-import model.map.Tile;
 import model.skills.ISkill;
-
-import java.util.List;
 
 public abstract class AHero extends AGameEntity {
 

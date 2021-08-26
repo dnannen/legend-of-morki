@@ -1,7 +1,6 @@
 package model.allies.siegeweapons;
 
 import model.AGameEntity;
-import model.map.Tile;
 
 public abstract class ASiegeWeapon extends AGameEntity {
 

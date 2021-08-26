@@ -1,7 +1,8 @@
 package model.map;
 
+import model.map.contents.Tile;
+
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 

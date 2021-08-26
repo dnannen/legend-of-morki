@@ -1,7 +1,8 @@
-package model.map;
+package model.map.contents;
 
 import model.AGameEntity;
 import model.buildings.Tower;
+import model.map.Map;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ public class Tile {
     private boolean isScenery;
     private boolean hasTower;
 
-    Tile(Map map, int id, int x, int y) {
+    public Tile(Map map, int id, int x, int y) {
         this.MAP = map;
         this.ID = id;
         this.COORDINATES.add(x);

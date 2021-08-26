@@ -1,7 +1,6 @@
 package model.allies.soldiers;
 
 import model.allies.AAlly;
-import model.map.Tile;
 
 public class ManAtArms extends AAlly {
 

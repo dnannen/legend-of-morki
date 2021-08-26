@@ -1,7 +1,6 @@
 package model.allies.specialunits;
 
 import model.allies.AAlly;
-import model.map.Tile;
 
 public class Paladin extends AAlly {
 

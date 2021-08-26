@@ -1,8 +1,7 @@
 package model.enemies.grunts;
 
-import model.AGameEntity;
 import model.enemies.AEnemy;
-import model.map.Tile;
+import model.map.contents.Tile;
 
 import java.util.List;
 

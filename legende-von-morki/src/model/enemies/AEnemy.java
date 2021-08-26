@@ -1,8 +1,6 @@
 package model.enemies;
 
 import model.AGameEntity;
-import model.enemies.grunts.EvilMage;
-import model.map.Tile;
 
 public abstract class AEnemy extends AGameEntity {
 

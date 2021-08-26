@@ -1,7 +1,6 @@
 package model.allies;
 
 import model.AGameEntity;
-import model.map.Tile;
 
 public abstract class AAlly extends AGameEntity {
 

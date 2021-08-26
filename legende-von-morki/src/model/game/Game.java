@@ -4,10 +4,8 @@ import model.AGameEntity;
 import model.allies.AAlly;
 import model.allies.soldiers.Archer;
 import model.buildings.Tower;
-import model.game.interactionExceptions.InvalidTowerPlacementException;
-import model.game.interactionExceptions.InvalidUnitPlacementException;
-import model.game.interactionExceptions.WrongUnitTypeException;
-import model.map.Tile;
+import model.game.interactionExceptions.*;
+import model.map.contents.Tile;
 
 public class Game implements IGameEntityInteractions {
 
@@ -53,5 +51,7 @@ public class Game implements IGameEntityInteractions {
         }
         if (target.getHp() <= 0) target.die();
     }
+
+
 
 }

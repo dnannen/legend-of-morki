@@ -1,7 +1,6 @@
 package model.enemies.grunts;
 
 import model.enemies.AEnemy;
-import model.map.Tile;
 
 public class Tank extends AEnemy {
 

@@ -1,5 +1,7 @@
 package model.map;
 
+import model.map.contents.Tile;
+
 import java.util.List;
 
 public interface IMap {

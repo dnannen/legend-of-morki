@@ -6,7 +6,7 @@ import model.buildings.Tower;
 import model.game.interactionExceptions.InvalidTowerPlacementException;
 import model.game.interactionExceptions.InvalidUnitPlacementException;
 import model.game.interactionExceptions.WrongUnitTypeException;
-import model.map.Tile;
+import model.map.contents.Tile;
 
 public interface IGameEntityInteractions {
 

@@ -3,7 +3,6 @@ package model.allies.specialunits;
 import model.AGameEntity;
 import model.allies.AAlly;
 import model.enemies.AEnemy;
-import model.map.Tile;
 
 public class Berserk extends AAlly {
 

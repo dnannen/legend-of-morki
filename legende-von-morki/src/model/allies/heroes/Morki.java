@@ -1,7 +1,5 @@
 package model.allies.heroes;
 
-import model.map.Tile;
-
 public class Morki extends AHero {
 
     public Morki() {

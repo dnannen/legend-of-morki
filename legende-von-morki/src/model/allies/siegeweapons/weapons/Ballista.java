@@ -1,7 +1,6 @@
 package model.allies.siegeweapons.weapons;
 
 import model.allies.siegeweapons.ASiegeWeapon;
-import model.map.Tile;
 
 public class Ballista extends ASiegeWeapon {
 
