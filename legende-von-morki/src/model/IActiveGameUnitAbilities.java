@@ -11,4 +11,6 @@ public interface IActiveGameUnitAbilities {
 
     void attack(AGameEntity target);
 
+    boolean checkForFoesInRange();
+
 }

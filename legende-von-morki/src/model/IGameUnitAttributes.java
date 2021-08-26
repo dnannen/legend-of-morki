@@ -2,6 +2,8 @@ package model;
 
 import model.map.Tile;
 
+import java.util.List;
+
 public interface IGameUnitAttributes {
 
     int getHp();
@@ -11,6 +13,10 @@ public interface IGameUnitAttributes {
     int getDmg();
 
     void setDmg(int dmg);
+
+    List<Tile> getRange();
+
+    void setRange(List<Tile> newRange);
 
     double getSpeed();
 
@@ -23,10 +29,6 @@ public interface IGameUnitAttributes {
     int getArmour();
 
     void setArmour(int armor);
-
-    int getAP();
-
-    void setAP(int AP);
 
     boolean isAoe();
 

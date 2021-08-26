@@ -14,11 +14,13 @@ public class Tile {
     private ArrayList<AGameEntity> currentUnitsOnTile;
     private Tower tower;
 
+    private final Map MAP;
     private boolean isPath;
     private boolean isScenery;
     private boolean hasTower;
 
-    Tile(int id, int x, int y) {
+    Tile(Map map, int id, int x, int y) {
+        this.MAP = map;
         this.ID = id;
         this.COORDINATES.add(x);
         this.COORDINATES.add(y);
@@ -55,8 +57,8 @@ public class Tile {
 
     public List<Tile> getSurroundingTiles(Map map) {
         List<Tile> range = new ArrayList<>(8);
-        int[] nextX = new int[] {-1, -1, -1, 0, 0, 1, 1, 1};
-        int[] nextY = new int[] {-1, 0, 1, -1, 1, -1, 0, 1};
+        int[] nextX = new int[] {-1, -1, -1,  0, 0,  1, 1, 1};
+        int[] nextY = new int[] {-1,  0,  1, -1, 1, -1, 0, 1};
 
         for (int i = 0; i < 8; i++) {
             int x = this.getCoordinates().get(0) + nextX[i];
@@ -68,6 +70,10 @@ public class Tile {
         }
 
         return range;
+    }
+
+    public Map getMap() {
+        return this.MAP;
     }
 
     public boolean isPath() {

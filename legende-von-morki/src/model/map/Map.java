@@ -29,7 +29,7 @@ public class Map implements IMap {
         int tileID = 0;
 
         while (true) {
-            this.tiles.add(new Tile(tileID, x, y));
+            this.tiles.add(new Tile(this, tileID, x, y));
             tileID++;
 
             y++;

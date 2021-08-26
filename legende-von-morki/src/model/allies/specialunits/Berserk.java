@@ -10,7 +10,7 @@ public class Berserk extends AAlly {
     private boolean rage = false;
 
     public Berserk() {
-        super(100, 30, 0, 1, 25, 0, false);
+        super(100, 30, 0, 1, 25, false);
     }
 
     /*

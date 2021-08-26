@@ -35,20 +35,8 @@ public class Game implements IGameEntityInteractions {
 
     @Override
     public void resolveFight(AGameEntity attacker, AGameEntity target) {
-        target.setHp(target.getHp() - (attacker.getDmg() - target.getArmour()));
+        attacker.attack(target);
         if (target.getHp() <= 0) target.die();
     }
 
-    @Override
-    public boolean move(AGameEntity a) {
-        a.getTile().removeUnit(a);
-        for(int i = 0; i < this.FIELD.getAlliedPath().size(); i++) {
-            if (a.getTile().equals(this.FIELD.getAlliedPath().get(i))) {
-                this.FIELD.getAlliedPath().get(i + 1).enterUnit(a);
-                a.setTile(this.FIELD.getAlliedPath().get(i + 1));
-                return true;
-            }
-        }
-        return false;
-    }
 }

@@ -4,12 +4,15 @@ import model.AGameEntity;
 import model.map.Tile;
 import model.skills.ISkill;
 
+import java.util.List;
+
 public abstract class AHero extends AGameEntity {
 
     private ISkill[] skills = new ISkill[2];
+    private int ap;
     private int level = 0;
 
-    public AHero(int hp, int dmg, float speed, double attackspeed, int armour, int ap, boolean aoe) {
+    public AHero(int hp, int dmg, double speed, double attackspeed, int armour, int ap, boolean aoe) {
         this.setHp(hp);
         this.setDmg(dmg);
         this.setSpeed(speed);
@@ -17,6 +20,22 @@ public abstract class AHero extends AGameEntity {
         this.setArmour(armour);
         this.setAP(ap);
         this.setAoe(aoe);
+    }
+
+    public int getAP() {
+        return this.ap;
+    }
+
+    public void setAP(int newAP) {
+        this.ap = newAP;
+    }
+
+    public int getLevel() {
+        return this.level;
+    }
+
+    public void levelUp() {
+        this.level++;
     }
 
     public void setSkills(ISkill[] newSkills) {

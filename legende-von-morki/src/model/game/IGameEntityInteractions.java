@@ -10,9 +10,6 @@ public interface IGameEntityInteractions {
 
     void spawnUnit(AGameEntity a);
 
-    void spawnUnit(AAlly a, Tower tower) throws WrongUnitTypeException, InvalidUnitPlacementException;
-
     void resolveFight(AGameEntity attacker, AGameEntity target);
 
-    boolean move(AGameEntity a);
 }

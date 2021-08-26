@@ -6,6 +6,6 @@ import model.map.Tile;
 public class Trebuchet extends ASiegeWeapon {
 
     public Trebuchet() {
-        super(200, 144, 0, 0.05, 15, 0, true);
+        super(200, 144, 0, 0.05, 15, true);
     }
 }
