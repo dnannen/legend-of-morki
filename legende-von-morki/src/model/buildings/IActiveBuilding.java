@@ -2,7 +2,6 @@ package model.buildings;
 
 import model.allies.AAlly;
 import model.allies.siegeweapons.ASiegeWeapon;
-import model.map.Tile;
 
 import java.util.ArrayList;
 

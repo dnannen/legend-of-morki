@@ -3,14 +3,13 @@ package model.allies.specialunits;
 import model.AGameEntity;
 import model.allies.AAlly;
 import model.enemies.AEnemy;
-import model.map.Tile;
 
 public class Berserk extends AAlly {
 
     private boolean rage = false;
 
-    public Berserk(Tile tile) {
-        super(100, 30, 0, 1, 25, 0, false, tile);
+    public Berserk() {
+        super(100, 30, 0, 1, 25, false);
     }
 
     /*

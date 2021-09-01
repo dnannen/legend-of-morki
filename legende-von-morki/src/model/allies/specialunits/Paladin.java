@@ -1,14 +1,13 @@
 package model.allies.specialunits;
 
 import model.allies.AAlly;
-import model.map.Tile;
 
 public class Paladin extends AAlly {
 
     private final int MAX_HP = 70;
 
-    public Paladin(Tile tile) {
-        super(70, 25, 3, 0.3, 30, 5, false, tile);
+    public Paladin() {
+        super(70, 25, 3, 0.3, 30, false);
     }
 
     @Override

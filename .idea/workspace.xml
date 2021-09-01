@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added minor things. Changed speed variable to double. Added ManAtArms, new troop mechanics have been made.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2021_18_29_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2021_18_29__Changes_.xml" beforeDir="false" />
+    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Refactored Tile, again.&#10;Prepared rework for the Unit classification. Errors ensue.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/AGameEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/AGameEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/IGameUnitAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/IGameUnitAttributes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/Tower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/EvilMage.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/EvilMage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/IGameEntityInteractions.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/IGameEntityInteractions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/contents/Paths.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/contents/Scenery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/contents/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +25,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -41,6 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -86,7 +97,42 @@
       <option name="project" value="LOCAL" />
       <updated>1629731150987</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added functionality to Game and surrounding classes to resolve fights, spawn and move an entity. No tests conducted yet.&#10;&#10;Added the first three Exceptions, make them more detailed later and make them display the error-message to the player without impeding on the game too much (like a view popup).">
+      <created>1629907048031</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1629907048031</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Conducted tests, seems to work.&#10;Removed a specific Tile from the unit's constructor, the Tile now gets set in the global spawn-function.&#10;Changed things not working.">
+      <created>1629910349983</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1629910349983</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Removed ap from AGameEntity and all subclasses. Only Heroes use it and only they have it now.&#10;Tiles now know what map they're on, used for getSurroundingTiles.&#10;Tweaked Interfaces according to changes.&#10;Added range initialization to so far implemented enemies.&#10;No tests conducted yet.">
+      <created>1629977778637</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1629977778637</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Tidied up the code further.">
+      <created>1629991966517</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1629991966517</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Refactored Tile into new package, part of code cleanup later.&#10;Wrote first tests, spawning seems to work, except with units on towers, probable code oversight found.&#10;Exceptions tested, work as expected.">
+      <created>1629998382148</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1629998382148</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -105,6 +151,16 @@
     <MESSAGE value="Added classes for the game and its current status.&#10;Pre-commit for merge." />
     <MESSAGE value="Added method for getting surrounding Tiles, still has a small issue." />
     <MESSAGE value="Added minor things. Changed speed variable to double. Added ManAtArms, new troop mechanics have been made." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added minor things. Changed speed variable to double. Added ManAtArms, new troop mechanics have been made." />
+    <MESSAGE value="Added functionality to Game and surrounding classes to resolve fights, spawn and move an entity. No tests conducted yet.&#10;&#10;Added the first three Exceptions, make them more detailed later and make them display the error-message to the player without impeding on the game too much (like a view popup)." />
+    <MESSAGE value="Conducted tests, seems to work.&#10;Removed a specific Tile from the unit's constructor, the Tile now gets set in the global spawn-function.&#10;Changed things not working." />
+    <MESSAGE value="Small commit. Preparing methods for checking range and combat." />
+    <MESSAGE value="Removed ap from AGameEntity and all subclasses. Only Heroes use it and only they have it now.&#10;Tiles now know what map they're on, used for getSurroundingTiles.&#10;Tweaked Interfaces according to changes.&#10;Added range initialization to so far implemented enemies.&#10;No tests conducted yet." />
+    <MESSAGE value="Tidied up the code further." />
+    <MESSAGE value="Refactored Tile into new package, part of code cleanup later.&#10;Wrote first tests, spawning seems to work, except with units on towers, probable code oversight found.&#10;Exceptions tested, work as expected." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored Tile into new package, part of code cleanup later.&#10;Wrote first tests, spawning seems to work, except with units on towers, probable code oversight found.&#10;Exceptions tested, work as expected." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -2,15 +2,16 @@ package model;
 
 import model.map.Tile;
 
+import java.util.List;
+
 public abstract class AGameEntity implements IActiveGameUnitAbilities, IGameUnitAttributes {
 
     private int hp;
     private int dmg;
-    private int range;
+    private List<Tile> range;
     private double speed;
     private double attackSpeed;
     private int armour;
-    private int ap;
     private boolean aoe;
     private Tile tile;
 
@@ -21,15 +22,16 @@ public abstract class AGameEntity implements IActiveGameUnitAbilities, IGameUnit
     }
 
     @Override
-    public void move(Tile destination) {
-        this.getTile().removeUnit(this);
-        destination.enterUnit(this);
-        this.setTile(destination);
+    public void attack(AGameEntity target) {
+        target.setHp(target.getHp() - (int) (this.getDmg() - target.getArmour() * 0.5));
     }
 
     @Override
-    public void attack(AGameEntity target) {
-        target.setHp(target.getHp() - (this.getDmg() - target.getArmour()));
+    public boolean checkForFoesInRange() {
+        for (Tile tile : range) {
+            return tile.getCurrentUnitsOnTile().isEmpty();
+        }
+        return false;
     }
 
     @Override
@@ -50,6 +52,20 @@ public abstract class AGameEntity implements IActiveGameUnitAbilities, IGameUnit
     @Override
     public void setDmg(int dmg) {
         this.dmg = dmg;
+    }
+
+    @Override
+    public List<Tile> getRange(){
+        return this.range;
+    }
+
+    @Override
+    public void setRange(List<Tile> newRange) {
+        this.range = newRange;
+    }
+
+    public void setRange(Tile range) {
+        this.range.add(range);
     }
 
     @Override
@@ -83,16 +99,6 @@ public abstract class AGameEntity implements IActiveGameUnitAbilities, IGameUnit
     }
 
     @Override
-    public int getAP() {
-        return this.ap;
-    }
-
-    @Override
-    public void setAP(int AP) {
-        this.ap = AP;
-    }
-
-    @Override
     public boolean isAoe() {
         return aoe;
     }
@@ -111,4 +117,5 @@ public abstract class AGameEntity implements IActiveGameUnitAbilities, IGameUnit
     public void setTile(Tile tile) {
         this.tile = tile;
     }
+
 }
