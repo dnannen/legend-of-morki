@@ -17,39 +17,28 @@ public class Main {
                                                   WrongUnitTypeException,
                                                   InvalidUnitPlacementException {
 
-        /*Map map = new Map(10, 10);
-        List<Tile> surrounds = map.getTile(1, 10).getSurroundingTiles(map);
-
-        for (Tile tile : surrounds) {
-            System.out.println(tile.getID());
-            System.out.println(tile.getCoordinates());
-        }*/
-
         GameField field = new GameField(10, 10);
         Player jan = new Player();
         Game game = new Game(field, jan);
 
-        //game.placeTower(field.getTile(1, 5)); Exception triggers!
+        System.out.println(field.getPath().get(0).getCoordinates());
+        System.out.println(field.getEnemyPath().get(0).getCoordinates());
+
+        //testing spawning units
+        ManAtArms man = new ManAtArms();
+        game.spawnUnit(man);
+        System.out.println(man.getTile().getCoordinates());
+        System.out.println(field.getTile(1, 5).getCurrentUnitsOnTile());
+
+        //testing spawning tower
         game.placeTower(field.getTile(1, 6));
-        game.spawnUnit(new ManAtArms());
-        //TODO spawning will later be changed
-        //game.spawnUnit(new ManAtArms(), new Tower(field.getTile(1, 6))); Exception triggers!
-        game.spawnUnit(new Archer(), new Tower(field.getTile(1, 6)));
+        System.out.println(field.getTile(1, 6).getTower());
 
-        EvilMage testRange = new EvilMage();
-        game.spawnUnit(testRange);
-        System.out.println(testRange.getRange());
-
-        Tank test = new Tank();
-        game.spawnUnit(test);
-        System.out.println(test.getRange());
-
-        /*
-        System.out.println(field.getTile(1, 5).getCurrentUnitsOnTile()); // []
-        System.out.println(field.getTile(1, 5).getTower()); // null
-        System.out.println(field.getTile(1, 6).getTower()); //model.buildings.Tower@723279cf
-        System.out.println(field.getTile(1, 6).getTower().getSoldiers()); //[] TODO this one doesnt work yet
-        */
+        //testing spawning units on tower
+        Archer archer = new Archer();
+        game.spawnUnitOnTower(field.getTile(1, 6), archer);
+        System.out.println(field.getTile(1, 6).getTower().getSoldiers());
+        System.out.println(field.getTile(1, 6).getCurrentUnitsOnTile()); //TODO maybe change this?
     }
 
 }

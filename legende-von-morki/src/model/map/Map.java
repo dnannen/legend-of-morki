@@ -1,7 +1,5 @@
 package model.map;
 
-import model.map.contents.Tile;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,7 +12,7 @@ public class Map implements IMap {
     private final int WIDTH;
 
     private List<Tile> path;
-    private List<Tile> alliedPath;
+    private List<Tile> enemyPath;
     private List<Tile> scenery;
 
     public Map(int xLength, int yWidth) {
@@ -45,9 +43,10 @@ public class Map implements IMap {
             value.setPathTile(true);
         }
 
+
         List<Tile> reverse = this.path;
-        Collections.reverse(reverse);
-        this.alliedPath = reverse;
+        //Collections.reverse(reverse);
+        this.enemyPath = reverse;
 
         this.scenery = markScenery();
         for (Tile value : this.scenery) {
@@ -113,8 +112,8 @@ public class Map implements IMap {
         return this.path;
     }
 
-    public List<Tile> getAlliedPath() {
-        return this.alliedPath;
+    public List<Tile> getEnemyPath() {
+        return this.enemyPath;
     }
 
     @Override

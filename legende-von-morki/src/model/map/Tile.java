@@ -1,8 +1,7 @@
-package model.map.contents;
+package model.map;
 
 import model.AGameEntity;
 import model.buildings.Tower;
-import model.map.Map;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,14 +96,14 @@ public class Tile {
         return this.hasTower;
     }
 
-    public void setTower(boolean set) {
-        if (set) {
-            this.tower = new Tower(this);
-            this.hasTower = true;
-        } else {
-            this.tower = null;
-            this.hasTower = false;
-        }
+    public void setTower() {
+        this.tower = new Tower(this);
+        this.hasTower = true;
+    }
+
+    public void destroyTower() {
+        this.tower = null;
+        this.hasTower = false;
     }
 
     public Tower getTower() {

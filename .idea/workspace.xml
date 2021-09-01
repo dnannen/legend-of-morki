@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Refactored Tile into new package, part of code cleanup later.&#10;Wrote first tests, spawning seems to work, except with units on towers, probable code oversight found.&#10;Exceptions tested, work as expected.">
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/contents/Paths.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/contents/Scenery.java" afterDir="false" />
+    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Refactored Tile, again.&#10;Prepared rework for the Unit classification. Errors ensue.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/AGameEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/AGameEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/IGameUnitAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/IGameUnitAttributes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/Tower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/EvilMage.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/EvilMage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/IGameEntityInteractions.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/IGameEntityInteractions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/contents/Paths.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/contents/Scenery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/contents/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

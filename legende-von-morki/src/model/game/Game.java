@@ -3,9 +3,8 @@ package model.game;
 import model.AGameEntity;
 import model.allies.AAlly;
 import model.allies.soldiers.Archer;
-import model.buildings.Tower;
 import model.game.interactionExceptions.*;
-import model.map.contents.Tile;
+import model.map.Tile;
 
 public class Game implements IGameEntityInteractions {
 
@@ -19,22 +18,22 @@ public class Game implements IGameEntityInteractions {
 
     @Override
     public void spawnUnit(AGameEntity a) {
-        a.setTile(this.FIELD.getAlliedPath().get(0));
-        this.FIELD.getAlliedPath().get(0).enterUnit(a);
+        a.setTile(this.FIELD.getPath().get(0));
+        this.FIELD.getPath().get(0).enterUnit(a);
     }
 
     @Override
     public void placeTower(Tile tile) throws InvalidTowerPlacementException {
         if (!(tile.hasTower() || tile.isPath() || tile.isScenery())) {
-            tile.setTower(true);
+            tile.setTower();
         } else {
             throw new InvalidTowerPlacementException("A tower cannot be placed here!");
         }
     }
 
-    public void spawnUnit(AAlly a, Tower tower) throws WrongUnitTypeException, InvalidUnitPlacementException {
-        if (a instanceof Archer && tower.getSoldiers().size() <= 6) {
-            tower.addSoldier(a);
+    public void spawnUnitOnTower(Tile tile, AAlly a) throws WrongUnitTypeException, InvalidUnitPlacementException {
+        if (a.getSpeed() == 0 && tile.hasTower() && tile.getTower().getSoldiers().size() <= 6) {
+            tile.getTower().addSoldier(a);
         } else if (!(a instanceof Archer)) {
             throw new WrongUnitTypeException("Only ranged soldiers can be placed on towers!");
         } else {
@@ -51,7 +50,5 @@ public class Game implements IGameEntityInteractions {
         }
         if (target.getHp() <= 0) target.die();
     }
-
-
 
 }

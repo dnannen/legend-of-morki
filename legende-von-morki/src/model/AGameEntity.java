@@ -1,6 +1,6 @@
 package model;
 
-import model.map.contents.Tile;
+import model.map.Tile;
 
 import java.util.List;
 
