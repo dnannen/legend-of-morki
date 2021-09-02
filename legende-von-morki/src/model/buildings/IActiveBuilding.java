@@ -9,17 +9,19 @@ public interface IActiveBuilding {
 
     int getHP();
 
-    int getLevel();
-
     void setHP(int hp);
 
+    int getLevel();
+
     boolean getMaintained();
+
+    void setMaintained(boolean maintained);
 
     ArrayList<AAlly> getSoldiers();
 
     ArrayList<ASiegeWeapon> getSiegeWeapons();
 
-    void levelUp(int level);
+    void levelUp();
 
     void destroy();
 }
