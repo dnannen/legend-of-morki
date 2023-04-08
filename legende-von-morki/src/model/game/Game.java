@@ -1,54 +1,29 @@
 package model.game;
 
-import model.AGameEntity;
-import model.allies.AAlly;
-import model.allies.soldiers.Archer;
-import model.game.interactionExceptions.*;
-import model.map.Tile;
+import model.AMapObject;
+import model.Tile;
+import model.map.Map;
 
-public class Game implements IGameEntityInteractions {
+public class Game {
 
-    private final GameField FIELD;
-    private final Player PLAYER;
+    private Map map;
 
-    public Game(GameField field, Player player) {
-        this.FIELD = field;
-        this.PLAYER = player;
+    public Game(Map map) {
+        this.map = map;
     }
 
-    @Override
-    public void spawnUnit(AGameEntity a) {
-        a.setTile(this.FIELD.getPath().get(0));
-        this.FIELD.getPath().get(0).enterUnit(a);
+    /**
+     * Spawns a walking unit on the first Tile of the Path
+     */
+    public void spawnWalkingUnit(AMapObject mapObject) {
+        //TODO this.map.getPath.add(...)
     }
 
-    @Override
-    public void placeTower(Tile tile) throws InvalidTowerPlacementException {
-        if (!(tile.hasTower() || tile.isPath() || tile.isScenery())) {
-            tile.setTower();
-        } else {
-            throw new InvalidTowerPlacementException("A tower cannot be placed here!");
-        }
+    /**
+     * Spawns a unit on the desired Tile
+     */
+    public void setUnit(AMapObject mapObject, Tile tile) {
+        this.map.getTile(tile.getXCoordinate(), tile.getYCoordinate()).addObject(mapObject);
+        //TODO add Object types and their specific properties
     }
-
-    public void spawnUnitOnTower(Tile tile, AAlly a) throws WrongUnitTypeException, InvalidUnitPlacementException {
-        if (a.getSpeed() == 0 && tile.hasTower() && tile.getTower().getSoldiers().size() <= 6) {
-            tile.getTower().addSoldier(a);
-        } else if (!(a instanceof Archer)) {
-            throw new WrongUnitTypeException("Only ranged soldiers can be placed on towers!");
-        } else {
-            throw new InvalidUnitPlacementException("This unit cannot be placed here!");
-        }
-    }
-
-    @Override
-    public void resolveFight(AGameEntity attacker, AGameEntity target) {
-        if (attacker.isAoe()) {
-            target.getTile().dealAoeDamage(attacker.getDmg());
-        } else {
-            attacker.attack(target);
-        }
-        if (target.getHp() <= 0) target.die();
-    }
-
 }

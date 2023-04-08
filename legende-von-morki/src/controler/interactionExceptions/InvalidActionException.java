@@ -1,4 +1,4 @@
-package model.game.interactionExceptions;
+package controler.interactionExceptions;
 
 public class InvalidActionException extends Exception {
 

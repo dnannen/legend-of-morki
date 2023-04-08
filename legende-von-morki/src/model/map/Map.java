@@ -1,160 +1,96 @@
 package model.map;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import model.AMapObject;
+import model.Tile;
+
 import java.util.List;
 
-public class Map implements IMap {
+public class Map {
 
-    private List<Tile> tiles = new ArrayList<>();
-
-    private final int DEPTH;
     private final int WIDTH;
+    private final int HEIGHT;
+
+    private Tile[][] field;
 
     private List<Tile> path;
-    private List<Tile> enemyPath;
-    private List<Tile> scenery;
+    private List<AMapObject> currentEntities;
 
-    public Map(int xLength, int yWidth) {
-        this.DEPTH = xLength;
-        this.WIDTH = yWidth;
-        this.create();
-    }
+    public Map(int rows, int columns) {
+        this.WIDTH = columns;
+        this.HEIGHT = rows;
 
-    @Override
-        public void create() {
-        int x = 1;
-        int y = 1;
-        int tileID = 0;
+        this.field = new Tile[WIDTH][HEIGHT];
 
-        while (true) {
-            this.tiles.add(new Tile(this, tileID, x, y));
-            tileID++;
-
-            y++;
-            if (y > WIDTH) {
-                y = 1;
-                x++;
-                if (x > DEPTH) break;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                this.field[i][j] = new Tile(i, j);
             }
         }
-        this.path = createPath();
-        for (Tile value : this.path) {
-            value.setPathTile(true);
-        }
-
-
-        List<Tile> reverse = this.path;
-        //Collections.reverse(reverse);
-        this.enemyPath = reverse;
-
-        this.scenery = markScenery();
-        for (Tile value : this.scenery) {
-            value.setSceneryTile(true);
-        }
-
     }
 
-    @Override
-    public int size() {
-        return this.tiles.size();
-    }
-
-    @Override
     public Tile getTile(int x, int y) {
-        return this.tiles.get((x * 10 + y) - 11);
+        return this.field[x][y];
     }
 
-    @Override
-    public Tile getTileFromID(int id) {
-        return this.tiles.get(id);
-    }
+    /**
+     * Creates a list for the path the walking enemies and player units walk on.
+     *
+     * Always start in the middle. Add a tile and then find out the next tile's coordinates.
+     * There is a 20% chance to go either left or right with the next tile.
+     *
+     * If a tile reaches a certain branching threshold, add the current tile and the one above,
+     * then set the next coordinates to the different side and continue.
+     *
+     * End when the top row is reached and mark all tiles as path.
+     */
+    public void createNewRandomPath() {
+        int currentXPosition = (this.WIDTH / 2);
+        int currentYPosition = 0;
 
-    @Override
-    public List<Tile> createPath() {
-        final int MAX_STRAY = 3;
-        int currentDepth = 1;
-        int currentBreadth = 5;
+        while(currentYPosition <= this.HEIGHT) {
+            this.path.add(this.getTile(currentXPosition, currentYPosition));
 
-        int rightStray = 0;
-        int leftStray = 0;
+            if(currentXPosition == this.WIDTH / 3) {
+                if(this.path.contains(this.getTile(currentXPosition++, currentYPosition))) { //left border reached
+                    currentYPosition++;
+                    this.path.add(this.getTile(currentXPosition, currentYPosition));
+                    currentXPosition++;
+                } else if(this.path.contains(this.getTile(currentXPosition--, currentYPosition))) { //right border reached
+                    currentYPosition++;
+                    this.path.add(this.getTile(currentXPosition, currentYPosition));
+                    currentXPosition--;
+                }
+            }
 
-        List<Tile> pathTiles = new ArrayList<>();
-        pathTiles.add(this.getTile(currentDepth, currentBreadth));
-
-        while (currentDepth < this.WIDTH) {
-            double strayChance = Math.random() * 100;
-
-            if (strayChance <= 30 && rightStray < MAX_STRAY) {
-                rightStray++;
-                currentBreadth++;
-
-                pathTiles.add(this.getTile(currentDepth, currentBreadth));
-                pathTiles.add(this.getTile(currentDepth + 1, currentBreadth));
-                currentDepth++;
-            } else if (strayChance >= 70 && leftStray < MAX_STRAY) {
-                leftStray++;
-                currentBreadth--;
-
-                pathTiles.add(this.getTile(currentDepth, currentBreadth));
-                pathTiles.add(this.getTile(currentDepth + 1, currentBreadth));
-                currentDepth++;
-            } else {
-                currentDepth++;
-                pathTiles.add(this.getTile(currentDepth, currentBreadth));
+            double chance = Math.random();
+            if(chance <= 0.2) { //go left
+                if(!(this.path.contains(this.getTile(currentXPosition++, currentYPosition)))) currentXPosition++;
+            } else if(chance >= 0.8) { //go right
+                if(!(this.path.contains(this.getTile(currentXPosition--, currentYPosition)))) currentXPosition--;
+            } else { //stay center
+                currentYPosition++;
             }
         }
-        return pathTiles;
-
+        for (Tile tile : this.path) tile.setPath(true);
     }
 
     public List<Tile> getPath() {
         return this.path;
     }
 
-    public List<Tile> getEnemyPath() {
-        return this.enemyPath;
-    }
+    /**
+     * Marks 1/12 of the map's tiles as scenery.
+     * Never mark a path tile as scenery.
+     */
+    public void markScenery() {
+        for (int i = 0; i < (this.HEIGHT * this.WIDTH) / 12; i++) {
 
-    @Override
-    public List<Tile> markScenery() {
-        int currentDepth = 1;
-        int currentBreadth;
+            int randomX = (int) (Math.random() * this.WIDTH);
+            int randomY = (int) (Math.random() * this.HEIGHT);
 
-        List<Tile> possibleTiles = new ArrayList<>();
-        List<Tile> sceneryTiles = new ArrayList<>();
-
-        for (Tile tile : path) {
-            while (currentDepth <= this.DEPTH) {
-
-                currentBreadth = tile.getCoordinates().get(1) - 3;
-                while (currentBreadth >= 1) {
-                    possibleTiles.add(this.getTile(currentDepth, currentBreadth));
-                     currentBreadth--;
-                }
-
-                currentBreadth = tile.getCoordinates().get(1) + 3;
-                while (currentBreadth <= 10) {
-                    possibleTiles.add(this.getTile(currentDepth, currentBreadth));
-                    currentBreadth++;
-                }
-                currentDepth++;
-
+            if (!(this.getTile(randomX, randomY).isPath())) {
+                this.getTile(randomX, randomY).setScenery(true);
             }
         }
-
-        //TODO
-        /*for (int i = 0; i < 6; i++) {
-            int random = (int) (Math.random() * 6);
-            sceneryTiles.add(random, possibleTiles.get(random));
-        }*/
-
-        return possibleTiles;
-        //return sceneryTiles;
     }
-
-    public List<Tile> getScenery() {
-        return this.scenery;
-    }
-
 }
