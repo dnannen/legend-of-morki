@@ -1,4 +1,6 @@
-package model;
+package model.map;
+
+import model.objects.AMapObject;
 
 import java.util.List;
 
@@ -54,11 +56,15 @@ public class Tile {
         isScenery = scenery;
     }
 
-    public boolean isHasTower() {
+    public boolean hasTower() {
         return hasTower;
     }
 
-    public void setHasTower(boolean hasTower) {
+    public void setTower(boolean hasTower) {
         this.hasTower = hasTower;
+    }
+
+    public boolean isEmpty() {
+        return this.currentObjects.isEmpty();
     }
 }

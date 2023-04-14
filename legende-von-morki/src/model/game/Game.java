@@ -1,22 +1,22 @@
 package model.game;
 
-import model.AMapObject;
-import model.Tile;
+import model.objects.AMapObject;
+import model.map.Tile;
 import model.map.Map;
 
 public class Game {
 
     private Map map;
 
-    public Game(Map map) {
-        this.map = map;
+    public Game(int width, int height) {
+        map = new Map(width, height);
     }
 
     /**
      * Spawns a walking unit on the first Tile of the Path
      */
     public void spawnWalkingUnit(AMapObject mapObject) {
-        //TODO this.map.getPath.add(...)
+        this.map.getPath().get(0).addObject(mapObject);
     }
 
     /**

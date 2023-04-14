@@ -1,7 +1,6 @@
 package model.map;
 
-import model.AMapObject;
-import model.Tile;
+import model.objects.AMapObject;
 
 import java.util.List;
 
@@ -50,16 +49,14 @@ public class Map {
         while(currentYPosition <= this.HEIGHT) {
             this.path.add(this.getTile(currentXPosition, currentYPosition));
 
-            if(currentXPosition == this.WIDTH / 3) {
-                if(this.path.contains(this.getTile(currentXPosition++, currentYPosition))) { //left border reached
-                    currentYPosition++;
-                    this.path.add(this.getTile(currentXPosition, currentYPosition));
-                    currentXPosition++;
-                } else if(this.path.contains(this.getTile(currentXPosition--, currentYPosition))) { //right border reached
-                    currentYPosition++;
-                    this.path.add(this.getTile(currentXPosition, currentYPosition));
-                    currentXPosition--;
-                }
+            if(currentXPosition == this.WIDTH / 2 - this.WIDTH / 3) { //left border reached
+                currentYPosition++;
+                this.path.add(this.getTile(currentXPosition, currentYPosition));
+                currentXPosition++;
+            } else if(currentXPosition == this.WIDTH / 2 + this.WIDTH / 3) {
+                currentYPosition++;
+                this.path.add(this.getTile(currentXPosition, currentYPosition));
+                currentXPosition--;
             }
 
             double chance = Math.random();
