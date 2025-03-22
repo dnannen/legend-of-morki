@@ -1,47 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added functionality to GameField, used to be later.&#10;Reworked Towers, maybe broke something.">
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/AMapObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/model/Tile.java" afterDir="false" />
+    <list default="true" id="d04b7f69-09ab-4f29-9f6d-1e5fecf82059" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Board/GameBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Board/Tile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Logic/Actions/ObjectActions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Logic/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Buildings/Building.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Enemies/EnemyUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Friendlies/FriendlyUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/AGameEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/IActiveGameUnitAbilities.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/IGameUnitAttributes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/AAlly.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/AHero.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/heroes/Morki.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/ASiegeWeapon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/weapons/Ballista.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/weapons/Catapult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/siegeweapons/weapons/Trebuchet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Archer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/Engineer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/soldiers/ManAtArms.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/specialunits/Berserk.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/allies/specialunits/Paladin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/buff/IBuff.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/AActiveBuilding.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/IActiveBuilding.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/buildings/Tower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/AEnemy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/EvilMage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/Sprinter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/enemies/grunts/Tank.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/GameField.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/IGameEntityInteractions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/interactionExceptions/InvalidActionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/controler/interactionExceptions/InvalidActionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/interactionExceptions/InvalidTowerPlacementException.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/controler/interactionExceptions/InvalidTowerPlacementException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/interactionExceptions/InvalidUnitPlacementException.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/controler/interactionExceptions/InvalidUnitPlacementException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/interactionExceptions/WrongUnitTypeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/controler/interactionExceptions/WrongUnitTypeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/IMap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Tile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/skills/ASkill.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/skills/ISkill.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/skills/TacticSkill.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/controler/interactionExceptions/InvalidActionException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/controler/interactionExceptions/InvalidTowerPlacementException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/controler/interactionExceptions/InvalidUnitPlacementException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/controler/interactionExceptions/WrongUnitTypeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/AMapObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/Tile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,155 +31,62 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="game" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1x83uuTdTISGveLGOcXiUnHmCg5" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2ug564pr8tKQByO1Fq9Uwziakmy" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
-    </key>
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Game.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game.Logic.Game" />
       <module name="src" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Game.Logic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Game" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task id="LOCAL-00001" summary="Added classes for the game and its current status.&#10;Pre-commit for merge.">
-      <created>1629467935461</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1629467935461</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added method for getting surrounding Tiles, still has a small issue.">
-      <created>1629476016584</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1629476016584</updated>
-    </task>
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ef4c1fcf-a851-4805-9189-f8be145506ae" name="Changes" comment="Added method for getting surrounding Tiles, still has a small issue." />
-      <created>1629723117306</created>
+      <changelist id="d04b7f69-09ab-4f29-9f6d-1e5fecf82059" name="Changes" comment="" />
+      <created>1742657197980</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1629723117306</updated>
+      <updated>1742657197980</updated>
     </task>
-    <task id="LOCAL-00003" summary="Added minor things. Changed speed variable to double. Added ManAtArms, new troop mechanics have been made.">
-      <created>1629731150987</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1629731150987</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added functionality to Game and surrounding classes to resolve fights, spawn and move an entity. No tests conducted yet.&#10;&#10;Added the first three Exceptions, make them more detailed later and make them display the error-message to the player without impeding on the game too much (like a view popup).">
-      <created>1629907048031</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1629907048031</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Conducted tests, seems to work.&#10;Removed a specific Tile from the unit's constructor, the Tile now gets set in the global spawn-function.&#10;Changed things not working.">
-      <created>1629910349983</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1629910349983</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Removed ap from AGameEntity and all subclasses. Only Heroes use it and only they have it now.&#10;Tiles now know what map they're on, used for getSurroundingTiles.&#10;Tweaked Interfaces according to changes.&#10;Added range initialization to so far implemented enemies.&#10;No tests conducted yet.">
-      <created>1629977778637</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1629977778637</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Tidied up the code further.">
-      <created>1629991966517</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1629991966517</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Refactored Tile into new package, part of code cleanup later.&#10;Wrote first tests, spawning seems to work, except with units on towers, probable code oversight found.&#10;Exceptions tested, work as expected.">
-      <created>1629998382148</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1629998382148</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Added functionality to GameField, used to be later.&#10;Reworked Towers, maybe broke something.">
-      <created>1630605240789</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1630605240789</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added classes for the game and its current status.&#10;Pre-commit for merge." />
-    <MESSAGE value="Added method for getting surrounding Tiles, still has a small issue." />
-    <MESSAGE value="Added minor things. Changed speed variable to double. Added ManAtArms, new troop mechanics have been made." />
-    <MESSAGE value="Added functionality to Game and surrounding classes to resolve fights, spawn and move an entity. No tests conducted yet.&#10;&#10;Added the first three Exceptions, make them more detailed later and make them display the error-message to the player without impeding on the game too much (like a view popup)." />
-    <MESSAGE value="Conducted tests, seems to work.&#10;Removed a specific Tile from the unit's constructor, the Tile now gets set in the global spawn-function.&#10;Changed things not working." />
-    <MESSAGE value="Small commit. Preparing methods for checking range and combat." />
-    <MESSAGE value="Removed ap from AGameEntity and all subclasses. Only Heroes use it and only they have it now.&#10;Tiles now know what map they're on, used for getSurroundingTiles.&#10;Tweaked Interfaces according to changes.&#10;Added range initialization to so far implemented enemies.&#10;No tests conducted yet." />
-    <MESSAGE value="Tidied up the code further." />
-    <MESSAGE value="Refactored Tile into new package, part of code cleanup later.&#10;Wrote first tests, spawning seems to work, except with units on towers, probable code oversight found.&#10;Exceptions tested, work as expected." />
-    <MESSAGE value="Added functionality to GameField, used to be later.&#10;Reworked Towers, maybe broke something." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added functionality to GameField, used to be later.&#10;Reworked Towers, maybe broke something." />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
