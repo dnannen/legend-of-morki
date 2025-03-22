@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d04b7f69-09ab-4f29-9f6d-1e5fecf82059" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Board/GameBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Board/Tile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Logic/Actions/ObjectActions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Logic/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Buildings/Building.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Enemies/EnemyUnit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Friendlies/FriendlyUnit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/GameObject.java" afterDir="false" />
+    <list default="true" id="d04b7f69-09ab-4f29-9f6d-1e5fecf82059" name="Changes" comment="Redid the entire project. The logic should be simpler now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/controler/interactionExceptions/InvalidActionException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/controler/interactionExceptions/InvalidTowerPlacementException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/controler/interactionExceptions/InvalidUnitPlacementException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/controler/interactionExceptions/WrongUnitTypeException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/AMapObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/Tile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/game/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/model/map/Map.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Board/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Board/GameBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,9 +69,30 @@
       <option name="presentableId" value="Default" />
       <updated>1742657197980</updated>
     </task>
+    <task id="LOCAL-00001" summary="Redid the entire project. The logic should be simpler now">
+      <option name="closed" value="true" />
+      <created>1742679138559</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742679138559</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Redid the entire project. The logic should be simpler now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redid the entire project. The logic should be simpler now" />
   </component>
 </project>

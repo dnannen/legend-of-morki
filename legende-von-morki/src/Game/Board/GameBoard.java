@@ -20,10 +20,8 @@ public class GameBoard {
             }
             count++;
         }
-        generatePath();
-    }
 
-    private void generatePath() {
+        //generate the Path for the enemies to walk along
         Random rand = new Random();
         int pathY = rand.nextInt(SIZE);
 
@@ -36,6 +34,20 @@ public class GameBoard {
                     int direction = rand.nextBoolean() ? -1 : 1;
                     pathY = Math.max(0, Math.min(SIZE - 1, pathY + direction));
                 }
+            }
+        }
+
+        //generate scenery on the field
+        rand = new Random();
+        int sceneryCount = 0;
+
+        while (sceneryCount < 15) {
+            int x = rand.nextInt(SIZE);
+            int y = rand.nextInt(SIZE);
+
+            if (board[x][y].getType() != 'p') {
+                board[x][y].setType('s');
+                sceneryCount++;
             }
         }
     }
