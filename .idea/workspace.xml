@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d04b7f69-09ab-4f29-9f6d-1e5fecf82059" name="Changes" comment="Redid the entire project. The logic should be simpler now">
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/ActiveGameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Board/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Board/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Board/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Board/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Logic/Actions/ObjectActions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Logic/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Logic/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Buildings/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Buildings/Building.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Enemies/EnemyUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Enemies/EnemyUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Friendlies/FriendlyUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Friendlies/FriendlyUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/GameObject.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,11 +28,28 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Exceptions" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dnannen&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dnannen/legend-of-morki.git&quot;,
+    &quot;accountId&quot;: &quot;da53b554-4075-4114-91e2-de00b4b0f929&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2ug564pr8tKQByO1Fq9Uwziakmy" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,7 +60,7 @@
     "Application.Game.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "logic",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
