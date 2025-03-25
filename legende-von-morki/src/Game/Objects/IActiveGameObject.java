@@ -1,8 +1,8 @@
 package Game.Objects;
 
-public interface ActiveGameObject {
+public interface IActiveGameObject {
 
-    void attack(ActiveGameObject target);
+    void attack(IActiveGameObject target);
 
     int getHealth();
     void setHealth(int h);

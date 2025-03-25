@@ -1,13 +1,13 @@
 package Game.Board;
 
-import Game.Objects.ActiveGameObject;
+import Game.Objects.IActiveGameObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Tile {
 
-    private List<ActiveGameObject> objects;
+    private List<IActiveGameObject> objects;
 
     //n - not assigned, s - scenery, p - path, e - empty
     private char type;
@@ -17,15 +17,15 @@ public class Tile {
         this.type = 'n';
     }
 
-    public void placeGameObject(ActiveGameObject object) {
+    public void placeGameObject(IActiveGameObject object) {
         this.objects.add(object);
     }
 
-    public List<ActiveGameObject> getAllObjects() {
+    public List<IActiveGameObject> getAllObjects() {
         return this.objects;
     }
 
-    public void removeGameObject (ActiveGameObject object) {
+    public void removeGameObject (IActiveGameObject object) {
         objects.remove(object);
     }
 

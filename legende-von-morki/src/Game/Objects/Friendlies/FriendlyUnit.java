@@ -1,9 +1,9 @@
 package Game.Objects.Friendlies;
 
 import Game.Objects.Enemies.EnemyUnit;
-import Game.Objects.ActiveGameObject;
+import Game.Objects.IActiveGameObject;
 
-public class FriendlyUnit implements ActiveGameObject {
+public class FriendlyUnit implements IActiveGameObject {
 
     private Integer health;
     private Integer attack;
@@ -15,7 +15,7 @@ public class FriendlyUnit implements ActiveGameObject {
     }
 
     @Override
-    public void attack(ActiveGameObject target) {
+    public void attack(IActiveGameObject target) {
         if (target instanceof EnemyUnit) {
             target.setHealth(target.getHealth() - this.attack);
         }

@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d04b7f69-09ab-4f29-9f6d-1e5fecf82059" name="Changes" comment="Redid the entire project. The logic should be simpler now">
-      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/ActiveGameObject.java" afterDir="false" />
+    <list default="true" id="d04b7f69-09ab-4f29-9f6d-1e5fecf82059" name="Changes" comment="Overhauled the Unit structure.&#10;Implemented basic methods inside the Enemy and Friendly Units.&#10;Implemented a spawn function for Game Units.&#10;Removed unnecessary functions.">
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/City/Buildings/Barracks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/City/Buildings/ICityBuilding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/City/Buildings/MainBuilding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/City/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/City/CityBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/legende-von-morki/src/Profile/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Board/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Board/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Logic/Actions/ObjectActions.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Logic/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Logic/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Buildings/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Buildings/Building.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/ActiveGameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/IActiveGameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Enemies/EnemyUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Enemies/EnemyUnit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Friendlies/FriendlyUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/Friendlies/FriendlyUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legende-von-morki/src/Game/Objects/GameObject.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -30,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Exceptions" />
+        <entry key="$PROJECT_DIR$" value="logic" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,7 +64,7 @@
     "Application.Game.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "logic",
+    "git-widget-placeholder": "city",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
@@ -101,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742679138559</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Overhauled the Unit structure.&#10;Implemented basic methods inside the Enemy and Friendly Units.&#10;Implemented a spawn function for Game Units.&#10;Removed unnecessary functions.">
+      <option name="closed" value="true" />
+      <created>1742812093480</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742812093480</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,6 +129,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Redid the entire project. The logic should be simpler now" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redid the entire project. The logic should be simpler now" />
+    <MESSAGE value="Overhauled the Unit structure.&#10;Implemented basic methods inside the Enemy and Friendly Units.&#10;Implemented a spawn function for Game Units.&#10;Removed unnecessary functions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Overhauled the Unit structure.&#10;Implemented basic methods inside the Enemy and Friendly Units.&#10;Implemented a spawn function for Game Units.&#10;Removed unnecessary functions." />
   </component>
 </project>

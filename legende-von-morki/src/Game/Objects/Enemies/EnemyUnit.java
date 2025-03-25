@@ -1,8 +1,8 @@
 package Game.Objects.Enemies;
 
-import Game.Objects.ActiveGameObject;
+import Game.Objects.IActiveGameObject;
 
-public class EnemyUnit implements ActiveGameObject {
+public class EnemyUnit implements IActiveGameObject {
 
     private Integer health;
     private Integer attack;
@@ -13,7 +13,7 @@ public class EnemyUnit implements ActiveGameObject {
     }
 
     @Override
-    public void attack(ActiveGameObject target) {
+    public void attack(IActiveGameObject target) {
         if (target instanceof EnemyUnit) {
             target.setHealth(target.getHealth() - this.attack);
         }
